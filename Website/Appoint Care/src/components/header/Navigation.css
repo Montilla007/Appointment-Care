@@ -1,0 +1,71 @@
+.linker{
+    text-decoration: none;
+    color: #6EAB36;
+    border: 0;
+    padding: 5px 20px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.linker:hover{
+    background-color: #007E85;
+    border-radius: 2rem;
+    color: white;
+}
+#LogoTitle {
+    color: #007E85;
+}
+#LogoSubTitle {
+    color: #6EAB36;
+}
+.login{
+    color: white;
+    background-color: #6EAB36;
+    padding: 5px 30px;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-size: 20px;
+}
+.login:hover{
+    background-color: #007E85;
+}
+.nav-item {
+    color: #6EAB36;
+    font-size: 20px;
+    position: relative;
+    text-decoration: none;
+    margin-right: 1.5em;
+    padding: 0 5px;
+}
+.nav-item::after {
+    content: "";
+    position: absolute;
+    background-color: #007E85;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.nav-item:hover {
+    color: #007E85;
+}
+.nav-new{
+    text-decoration: none;
+    color: #6EAB36;
+    padding: 0 5px;
+}
+.nav-new:hover{
+    border-radius: 2rem;
+    background-color: #007E85;
+    color: white;
+}
+.active{
+    background-color: #007E85;
+    border-radius: 2rem;
+    display: inline-block;
+    color: white;
+}
