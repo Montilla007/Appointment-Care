@@ -6,6 +6,13 @@
     * https://acte.ltd/utils/randomkeygen Choose the " Encryption key 256 "
  * Add " JWT_LIFETIME=30d "
     * 30d means 30 days and it is recommended to just copy and paste
+
+.env should look like this
+```bash
+MONGO_URI=mongodb+srv://rchristerdale:<password>@p2p.c4fywar.mongodb.net/?retryWrites=true&w=majority
+JWT_SECRET=8cerPJmJlwHYYDOkd4SRUJrSOO4xtdG4
+JWT_LIFETIME=30d
+```
 ### 2. On the terminal
 ```bash
 npm install && npm start
