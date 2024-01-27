@@ -1,7 +1,7 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "delete me",
+  "description": "I am the brain",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
