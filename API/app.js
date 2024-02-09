@@ -20,7 +20,7 @@ app.use(express.json());
 // extra packages
 
 // routes
-app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/Auth', authRouter)
 app.use('/api/v1/home', authenticateUser, homeRouter)
 
 app.use(notFoundMiddleware);
