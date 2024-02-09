@@ -1,0 +1,200 @@
+.service{
+    position: relative;
+    height: 75vh;
+}
+.service::before {
+    background: url("https://scontent.fbag1-2.fna.fbcdn.net/v/t1.15752-9/415441619_7432733340103973_3925568075075051702_n.png?_nc_cat=108&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeEsMrx_ZyeEPKyIMtpXbx8ZyuzOGSBAnR3K7M4ZIECdHbDS5Is2gpFol4noapFgdZLAXJ8R_0HDzHfmQ6lyAhyH&_nc_ohc=xHLFTHi-7a0AX9EA6mg&_nc_ht=scontent.fbag1-2.fna&oh=03_AdTIiq51t-PnaVn5GsxO3ea_jV0FycizV-MR7SCR1k5iZQ&oe=65CD4774");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.service-description h2{
+    color: white;
+    font-weight: 700;
+    font-size: 70px;
+    text-align: left;
+}
+.service-description p{
+    color: white;
+    text-align: left;
+    letter-spacing: 1px;
+    font-size: 26px;
+    font-weight: 300;
+}
+#booknow{
+    background-color: #007E85;
+    width: 200px;
+    border-radius: 20px;
+    height: 50px;
+    color: white;
+    border: 0;
+}
+#learnmore{
+    background-color: transparent;
+    border: 2px solid #007E85;
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    color: white; 
+    font-weight: 700;  
+}
+.form-appointment{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: relative;
+    margin-top: 30px;
+    width: 328px;
+    height: 610px;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: ;
+}
+.form-appointment h2{
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.form-appointment label{
+    font-weight: 500;
+    text-align: left;
+    padding: 10px 0;
+}
+.form-appointment input{
+    height: 50px;
+    width: 100%;
+    border: 2px solid #E6E6E6;
+    border-radius: 5px;
+    padding-left: 20px;
+}
+.form-appointment select{
+    height: 50px;
+    border: 2px solid #E6E6E6;
+    border-radius: 5px;
+    padding-left: 15px;
+    color: gray;
+}
+.form-appointment select:nth-of-type(2){
+    margin-bottom: 30px;
+}
+.form-appointment button{
+    background-color: #007E85;
+    border-radius: 5px;
+    border: 0;
+    height: 52px;
+    color: white;
+}
+/* Top Doctors */
+.Top-Doctors{
+    margin-top: 130px;
+}
+.Top-Doctors h2{
+    font-weight: 700;
+    color: #007E85;
+    margin-bottom: 20px;
+}
+.Top-Doctors p{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+.profile-area{
+    padding: 20px 0px;
+    display: flex;
+}
+.cards{
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+    border-radius: 15px;
+    width: 100%;
+    margin-bottom: 50px;
+}   
+.img1 img{
+    height: 200px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 100%;
+}
+.img2 img{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 7px solid #FFF;
+    margin-top: -80px;
+}
+.cards:hover .img2 img{
+    border-color: #007E85;
+    transition: .7s;
+}
+.main-text{
+    padding: 30px 0;
+    text-align: center;
+}
+.main-text h2{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 25px;
+    margin: 0 0 5px;
+}
+.main-text h4{
+    text-transform: capitalize;
+    color: #777;
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.socials{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.socials a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+.socials i{
+    font-size: 20px;
+    color: #007E85;
+    padding: 0 10px;
+}
+.socials a:hover i {
+    color: black;
+    transition: 0.5s;
+}
+.card-body2 h2{
+    padding-top: 20px;
+    text-align: center;
+    color: #6EAB36;
+}
+.card-body2 h4{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.card-body2 p{
+    padding: 0 40px;
+    text-align: center;
+    padding-bottom: 0;
+}
+.see-more{
+    margin-bottom: 30px;
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+}

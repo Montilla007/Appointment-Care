@@ -1,0 +1,20 @@
+.patient-doctor{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.registeras{
+    text-decoration: none;
+    margin: auto;
+    display: block;
+    padding: 20px;
+    width: 50%;
+    background: transparent;
+    color: black;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #007E85;
+    background-color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 20px;
+}

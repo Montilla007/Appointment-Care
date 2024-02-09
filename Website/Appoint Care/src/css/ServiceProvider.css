@@ -1,0 +1,41 @@
+.provider {
+    margin-top: 100px;
+}
+
+.card-body1 {
+    padding: 20px;
+}
+
+.card-body1 h5 {
+    color: #007E85;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card-body1 p {
+    margin-top: 5px;
+    margin-bottom: ;
+}
+
+.card-2-img {
+    padding: 10px;
+    border: 2px solid #e0e0e2;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+.card-2-img a {
+    background-color: transparent;
+    color: #007E85;
+    border-color: #007E85;
+}
+
+.service-provide h2 {
+    color: #007E85;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.service-provide p {
+    margin-bottom: 30px;
+}

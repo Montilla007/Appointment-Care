@@ -1,0 +1,149 @@
+.contact {
+    position: relative;
+    height: 75vh;
+    margin-bottom: 50px;
+}
+
+.contact::before {
+    background: url("https://scontent.fbag1-2.fna.fbcdn.net/v/t1.15752-9/415441619_7432733340103973_3925568075075051702_n.png?_nc_cat=108&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeEsMrx_ZyeEPKyIMtpXbx8ZyuzOGSBAnR3K7M4ZIECdHbDS5Is2gpFol4noapFgdZLAXJ8R_0HDzHfmQ6lyAhyH&_nc_ohc=xHLFTHi-7a0AX9EA6mg&_nc_ht=scontent.fbag1-2.fna&oh=03_AdTIiq51t-PnaVn5GsxO3ea_jV0FycizV-MR7SCR1k5iZQ&oe=65CD4774");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#contact-title {
+    font-weight: 700;
+    color: #007E85;
+}
+
+.contact-location {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 50px;
+}
+
+.contact-location i {
+    color: #6EAB36;
+    margin-right: 15px;
+}
+
+.contact-location h2 {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contact-information {
+    margin-top: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    padding-top: 50px;
+}
+
+.contact-padding {
+    padding: 15px 40px;
+}
+
+.contact-icons {
+    margin-top: 60px;
+}
+
+.contact-information i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.contact-icons p {
+    margin-top: 40px;
+}
+
+.contact-information img {
+    position: relative;
+    transform: translate(425px, 55px);
+}
+
+.contact-content {
+    background-color: white;
+}
+
+.contact-icons-2 a {
+    text-decoration: none;
+    padding: 5px;
+    margin-right: 25px;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.contact-icons-2 i {
+    color: black;
+    opacity: 0.9;
+    font-size: 20px;
+}
+
+.contact-icons-2 a:hover {
+    background-color: #111;
+    transition: 0.5s;
+}
+
+.contact-icons-2 a:hover i {
+    color: white;
+    transition: 0.5s;
+}
+
+.contact-input {
+    background-color: #FAFAFA;
+    padding: 20px 20px;
+    border-radius: 8px;
+    height: 611px;
+}
+
+.contact-input-2 {
+    padding: 20px 20px;
+}
+
+.contact-input label {
+    display: block;
+    color: #8D8D8D;
+}
+
+.contact-input input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #8D8D8D;
+    outline: none;
+    background: transparent;
+    margin-bottom: 20px;
+}
+
+.contact-input input::placeholder {
+    color: #999;
+}
+
+.contact-input input:focus {
+    border-bottom: 2px solid black;
+    /* Change the color on focus */
+}
+
+.contact-input button {
+    background-color: black;
+    color: white;
+    width: 120px;
+    height: 50px;
+    border: 0;
+    border-radius: 8px;
+}

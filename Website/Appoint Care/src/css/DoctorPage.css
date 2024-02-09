@@ -1,0 +1,122 @@
+.doctor-page {
+    margin: 50px 0;
+    min-height: 100vh;
+}
+
+.sidebar-item a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+    display: flex;
+}
+
+#sidebar {
+    width: 150px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    background-color: #007E85;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    transition: all 0.35s ease-in-out;
+    background-color: #fafbfe;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #FFF;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+    color: white;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i {
+    font-size: 1.5rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(34, 23, 23, 0.075);
+    border-left: 3px solid #3b7ddd;
+}
+
+.sidebar-item {
+    position: relative;
+    padding-bottom: 50px;
+}
+.rectangle{
+    background: url("https://scontent.fbag1-2.fna.fbcdn.net/v/t1.15752-9/416113496_920849769437681_3358841743192073575_n.png?_nc_cat=101&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeHQ9KVU45RVn_do0ZwPzFVMlnFpI67lye-WcWkjruXJ72hDG3MU5WRYY-Ff1p63NwBxOfy-nblXTpVumHo8yBg7&_nc_ohc=WURanu8qdEwAX8VILEW&_nc_ht=scontent.fbag1-2.fna&oh=03_AdRw2CVEg8lAi23n68gV3G1ALkh0pMJYJa6OY2wyBY9ySg&oe=65CF7C97");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 20px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+#doctorpage-doctor{
+    position: relative;
+    transform: translate(-40px,-90px);
+}
+.Goodmorning{
+    text-align: left;
+}
+#name-doctor{
+    font-weight: 700;
+    color: #007E85;
+}
+.new-patients{
+    background: linear-gradient(#FFFFFF, transparent);
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    border: 1px solid black;
+}
+.old-patients{
+    background: linear-gradient(white, transparent);
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+}
+#number-of-new-patients{
+    font-size: 40px;
+}

@@ -1,0 +1,42 @@
+.MainContent2 {
+    margin-top: 50px;
+    background-color: #FAFAFA;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+#search {
+    width: 880px;
+    height: 60px;
+    border-radius: 10px;
+    border: 2px solid #007E85;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.findp {
+    margin-right: 40px;
+}
+
+#find {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    color: white;
+    background-color: #007E85;
+    border-radius: 5px;
+    border: 0;
+}
+
+.help {
+    color: #007E85;
+    flex-direction: row;
+    justify-content: end;
+    margin-left: 5px;
+    font-weight: 700;
+}
+
+.helpDiv {
+    color: #FFFFFF;
+}
