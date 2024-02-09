@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DoctorPage.css';
+import '../../css/DoctorPage.css';
 
 
 const DoctorPage = () => {
@@ -17,27 +17,27 @@ const DoctorPage = () => {
             </li>
             <li className="sidebar-item">
               <a href="" className="sidebar-link">
-                <i class="fa-regular fa-calendar"></i>
+                <i className="fa-regular fa-calendar"></i>
               </a>
             </li>
             <li className="sidebar-item">
               <a href="" className="sidebar-link">
-                <i class="fa-solid fa-list-check"></i>
+                <i className="fa-solid fa-list-check"></i>
               </a>
             </li>
             <li className="sidebar-item">
               <a href="" className="sidebar-link">
-                <i class="fa-solid fa-person"></i>
+                <i className="fa-solid fa-person"></i>
               </a>
             </li>
             <li className="sidebar-item">
               <a href="" className="sidebar-link">
-                <i class="fa-solid fa-ban"></i>
+                <i className="fa-solid fa-ban"></i>
               </a>
             </li>
             <li className="sidebar-item">
               <a href="" className="sidebar-link">
-                <i class="fa-solid fa-right-from-bracket"></i>
+                <i className="fa-solid fa-right-from-bracket"></i>
               </a>
             </li>
           </ul>

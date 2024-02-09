@@ -1,5 +1,5 @@
 import React from 'react'
-import './WelcomeDesign.css'
+import '../../css/WelcomeDesign.css'
 
 const WelcomeDesign = () => {
   return (
@@ -7,7 +7,7 @@ const WelcomeDesign = () => {
         <h3 id="welcome">WELCOME TO</h3>
         <div className='flex-row align-items-center serving-logo'>
           <img className='' src="logo.png" alt="logo" />
-          <h2 className='d-inline-block'>NOW <span style={{ color: "#007E85" }}>SERVING</span></h2>
+          <h2 className='d-inline-block'>APPOINT <span style={{ color: "#007E85" }}>CARE</span></h2>
         </div>
         <div className="container">
           <div className="row">

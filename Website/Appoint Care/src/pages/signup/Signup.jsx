@@ -1,7 +1,7 @@
 import React from 'react';
 import WelcomeDesign from '../../components/reusecomponent/WelcomeDesign';
 import { NavLink } from 'react-router-dom';
-import './Signup.css';
+import '../../css/Signup.css';
 
 const Signup = () => {
   return (

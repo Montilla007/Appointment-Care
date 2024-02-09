@@ -1,5 +1,5 @@
 import React from 'react'
-import './FindDoctor.css'
+import '../../css/FindDoctor.css'
 
 const FindDoctor = () => {
   return (

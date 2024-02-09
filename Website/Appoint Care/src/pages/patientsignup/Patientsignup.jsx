@@ -1,5 +1,5 @@
 import React from 'react'
-import './Patientsignup.css'
+import '../../css/Patientsignup.css'
 import WelcomeDesign from '../../components/reusecomponent/WelcomeDesign'
 const Patientsignup = () => {
     return (

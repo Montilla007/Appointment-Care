@@ -1,6 +1,8 @@
 import React from 'react'
 import FindDoctor from '../../components/reusecomponent/FindDoctor'
-import './Home.css'
+import ServiceProvider from '../../components/reusecomponent/ServiceProvider'
+import '../../css/Home.css'
+import FAQ from '../../components/reusecomponent/FAQ'
 
 const Home = () => {
   return (
@@ -39,8 +41,10 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <FindDoctor/>
-    </main>
+      <FindDoctor />
+      <ServiceProvider />
+      <FAQ />
+    </main >
   )
 }
 

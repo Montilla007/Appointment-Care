@@ -1,5 +1,6 @@
 import React from 'react';
-import './Contact.css';
+import "../../css/Contact.css"
+import FAQ from '../../components/reusecomponent/FAQ';
 
 const Contact = () => {
   return (
@@ -47,8 +48,10 @@ const Contact = () => {
       </section>
       <section>
         <div className="container contact-content">
-          <h2 id="contact-title">Connect with us</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, ad.</p>
+          <div className='text-center my-5'>
+            <h2 id="contact-title">Connect with us</h2>
+            <p>We're here to promptly address any concerns or complaints you have and ensure your satisfaction with our dedicated support team.</p>
+          </div>
           <div className="row">
             <div className="col-6 contact-information">
               <div className='contact-padding'>
@@ -61,9 +64,9 @@ const Contact = () => {
                 </div>
                 <img src="Ellipse 793.png" alt="Ellipse" />
                 <div className='contact-icons-2'>
-                  <a href=""><i class="fa-brands fa-facebook"></i></a>
-                  <a href=""><i class="fa-brands fa-instagram"></i></a>
-                  <a href=""><i class="fa-brands fa-twitter"></i></a>
+                  <a href=""><i className="fa-brands fa-facebook"></i></a>
+                  <a href=""><i className="fa-brands fa-instagram"></i></a>
+                  <a href=""><i className="fa-brands fa-twitter"></i></a>
                 </div>
               </div>
             </div>
@@ -72,23 +75,23 @@ const Contact = () => {
                 <div className="row">
                   <div className="col-6">
                     <label htmlFor="contact-first-name">First Name</label>
-                    <input type="text" id="contact-first-name" placeholder='First Name'/>
+                    <input type="text" id="contact-first-name" placeholder='First Name' />
                   </div>
                   <div className="col-6">
                     <label htmlFor="contact-last-name">Last Name</label>
-                    <input type="text" id="contact-last-name" placeholder='Last Name'/>
+                    <input type="text" id="contact-last-name" placeholder='Last Name' />
                   </div>
                   <div className="col-6">
                     <label htmlFor="contact-email">Email</label>
-                    <input type="email" id="contact-email" placeholder='Email'/>
+                    <input type="email" id="contact-email" placeholder='Email' />
                   </div>
                   <div className="col-6">
                     <label htmlFor="contact-phone-number">Phone Number</label>
-                    <input type="text" id="contact-phone-number" placeholder='Phone Number'/>
+                    <input type="text" id="contact-phone-number" placeholder='Phone Number' />
                   </div>
                   <div className="col-12">
                     <label htmlFor="contact-message">Message</label>
-                    <input type="text"id="contact-message" placeholder='Message'/>
+                    <input type="text" id="contact-message" placeholder='Message' />
                   </div>
                   <div className="col-6"></div>
                   <div className="col-3"></div>
@@ -101,6 +104,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <FAQ />
     </div>
   );
 };

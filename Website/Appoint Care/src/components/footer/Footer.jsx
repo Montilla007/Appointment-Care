@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import './Footer.css'
+import '../../css/Footer.css'
 
 const Footer = () => {
     return (
@@ -25,7 +25,7 @@ const Footer = () => {
                     <div className="col-2 flex-column justify-center links">
                         <h3>Links <div className="underline"><span></span></div></h3>
                         <ul className='list-unstyled'>
-                            <li className="nav-item nav2"><NavLink to="/" className="nav-link">Home</NavLink></li>
+                            <li className="nav-item nav2"><NavLink exact="true" to="/" className="nav-link">Home</NavLink></li>
                             <li className="nav-item nav2"><NavLink to="/Service" className="nav-link">Service</NavLink></li>
                             <li className="nav-item nav2"><NavLink to="/Contact" className="nav-link">Contact Us</NavLink></li>
                             <li className="nav-item nav2"><NavLink to="/Help" className="nav-link">About Us</NavLink></li>

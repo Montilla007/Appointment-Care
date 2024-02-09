@@ -10,7 +10,7 @@ import Patientsignup from "./pages/patientsignup/Patientsignup"
 import DoctorInformation from "./components/reusecomponent/DoctorInformation"
 import DoctorPage from "./components/reusecomponent/DoctorPage"
 import PatientInformation from "./components/reusecomponent/PatientInformation"
-
+import TopDoctors from './pages/topdoctors/TopDoctors'
 import './app.css'
 
 function App() {
@@ -23,11 +23,12 @@ function App() {
           <Route path='/Service' element={<Service />} />
           <Route path='/Contact' element={<Contact />} />
           <Route path='/Login' element={<Login />} />
-          <Route path='/Signup' element={<Signup />} />
+          <Route path='/TopDoctors' element={<TopDoctors />} />
+          <Route path='/Auth/Signup' element={<Signup />} />
           <Route path='/PatientSignup' element={<Patientsignup />} />
           <Route path='/DoctorInformation' element={<DoctorInformation />} />
-          <Route path='/DoctorPage' element={<DoctorPage/>}/>
-          <Route path='/PatientInformation' element={<PatientInformation/>}/>
+          <Route path='/DoctorPage' element={<DoctorPage />} />
+          <Route path='/PatientInformation' element={<PatientInformation />} />
         </Routes>
         <Footer />
       </BrowserRouter>
