@@ -2,7 +2,7 @@
 
 https://github.com/barrozojp/Appointment-Care
 
-## Member: 
+## Task Allocation: 
   * John Paul Barrozo
   * Mart Renzu Ragudo
   * Carl Jhester Royupa
