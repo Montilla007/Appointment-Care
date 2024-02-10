@@ -4,5 +4,5 @@
 npm install
 npm start
 ```
-
+### And wait for Server is listening in port 3000
 And you're good to go
