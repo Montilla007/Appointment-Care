@@ -1,13 +1,16 @@
-.patient-page{
+.patient-page {
     margin-top: 40px;
     margin-bottom: 20px;
 }
-.patient-infos{
+
+.patient-infos {
     text-align: center;
     padding: 25px;
     border-radius: 9px;
     background-color: #FAFAFA;
 }
-.main-2{
+
+.main-2 {
     height: 100vh;
+    margin-bottom: 500px;
 }

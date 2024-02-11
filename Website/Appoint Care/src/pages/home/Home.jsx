@@ -7,7 +7,7 @@ import FAQ from '../../components/reusecomponent/FAQ'
 const Home = () => {
   return (
     <main>
-      <section>
+      <section className='home'>
         <div className='home text-center mt-3 mx-5'>
           <div className="container align-items-center justify-content-center">
             <div className="row align-items-center justify-content-center">

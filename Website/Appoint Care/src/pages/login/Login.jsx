@@ -17,9 +17,9 @@ const Login = () => {
                                 <form action="" className='login-form mx-auto'>
                                     <h2 style={{ color: '#6EAB36' }}>Log In</h2>
                                     <label className="d-block" htmlFor="">Email *</label>
-                                    <input type="text" placeholder="Enter your Email or Username" required />
+                                    <input type="text" placeholder="Enter your Email" required />
                                     <label className="d-block" htmlFor="">Password *</label>
-                                    <input type="text" placeholder="Enter your Email or Username" required />
+                                    <input type="password" placeholder="Enter your Password" required />
                                     <button className=" d-block mx-auto submit-login">Submit</button>
                                 </form>
                             </div>

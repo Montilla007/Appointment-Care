@@ -3,6 +3,10 @@ body {
     font-family: 'Roboto';
 }
 
+.home {
+    margin-bottom: 150px;
+}
+
 .description h2 {
     margin-bottom: 25px;
     text-align: left;

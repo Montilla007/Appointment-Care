@@ -4,24 +4,22 @@ import WelcomeDesign from '../../components/reusecomponent/WelcomeDesign';
 import axios from 'axios';
 
 const Patientsignup = () => {
-    const handleSubmit = (e) => {
-        e.preventDefault(); // Fix typo: 'preventDefault' instead of 'preventdefault'
-        axios.post('https://jsonplaceholder.typicode.com/posts', { post: form }) // Use 'form' instead of undefined 'post'
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
-    };
-
     const [form, setForm] = React.useState({
         task: "",
         Fname: "",
         Lname: "",
+        age: "",
         number: "",
+        gender: "",
         email: "",
         password: "",
-        ConfirmPassword: "",
-        gender: "",
     });
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.post('http://localhost:3001/api/v1/auth/signup', { post: form }) // Use 'form' instead of undefined 'post'
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+    };
     function handleClick(event) {
         const { name, value, type, checked } = event.target;
         setForm(prevState => ({
@@ -46,17 +44,19 @@ const Patientsignup = () => {
                                     <h2 style={{ color: '#6EAB36' }}>Sign up</h2>
                                     <h4>Please complete the following details to proceed</h4>
                                     <label className="d-block" htmlFor="firstName-patient">First Name *</label>
-                                    <input type="text" placeholder="Enter your First name" id="firstName-patient" required onChange={handleClick} name="Fname" />
+                                    <input type="text" placeholder="Enter your First name" id="firstName-patient" required onChange={handleClick} name="Fname"  value={form.Fname} />
                                     <label className="d-block" htmlFor="lastName-patient">Last Name *</label>
-                                    <input type="text" placeholder="Enter your Last Name" id="lastName-patient" required onChange={handleClick} name="Lname" />
+                                    <input type="text" placeholder="Enter your Last` name" id="lastName-patient" required onChange={handleClick} name="Lname" value={form.Lname} />
+                                    <label className="d-block" htmlFor="age-patient">Age *</label>
+                                    <input type="number" placeholder="Enter your Age" id="age-patient" required onChange={handleClick} name="age" value={form.age} />
                                     <label className="d-block" htmlFor="phonenumber-patient">Phone Number *</label>
-                                    <input type="text" placeholder="Enter your Phone Number" id="phonenumber-patient" required onChange={handleClick} name="number" />
+                                    <input type="text" placeholder="Enter your Phone Number" id="phonenumber-patient" required onChange={handleClick} name="number"  value={form.number}/>
                                     <label className="d-block" htmlFor="email-patient">Email *</label>
-                                    <input type="email" placeholder="Enter your Email" id="email-patient" required onChange={handleClick} name="email" />
+                                    <input type="email" placeholder="Enter your Email" id="email-patient" required onChange={handleClick} name="email" value={form.email} />
                                     <label className="d-block" htmlFor="password-patient">Password *</label>
-                                    <input type="password" placeholder="Enter password" id="password-patient" required onChange={handleClick} name="password" />
+                                    <input type="password" placeholder="Enter password" id="password-patient" required onChange={handleClick} name="password" value={form.password} autoComplete="new-password" />
                                     <label className="d-block" htmlFor="confirmpassword-patient">Confirm password *</label>
-                                    <input type="password" placeholder="Confirm password" id="confirmpassword-patient" required onChange={handleClick} name="ConfirmPassword" />
+                                    <input type="password" placeholder="Confirm password" id="confirmpassword-patient" />
                                     <div className=''>
                                         <label className='d-block radio-button-text'>Select your Gender:</label>
                                         <div className='row align-items-center'>
