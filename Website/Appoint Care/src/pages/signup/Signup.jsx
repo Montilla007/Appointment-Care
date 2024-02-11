@@ -12,7 +12,7 @@ const Signup = () => {
           <hr />
           <div className='flex-column justify-content-center align-items-center'>
             <NavLink to='/PatientSignup' className="registeras">Register as Patient </NavLink>
-            <NavLink  to='/PatientSignup'  className="registeras">Register as Doctor</NavLink>
+            <NavLink to='/PatientSignup' className="registeras">Register as Doctor</NavLink>
           </div>
         </div>
       </div>

@@ -11,8 +11,6 @@ import DoctorInformation from "./components/reusecomponent/DoctorInformation"
 import DoctorPage from "./components/reusecomponent/DoctorPage"
 import PatientInformation from "./components/reusecomponent/PatientInformation"
 import TopDoctors from './pages/topdoctors/TopDoctors'
-import './app.css'
-
 function App() {
   return (
     <>
