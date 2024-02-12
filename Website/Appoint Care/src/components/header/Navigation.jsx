@@ -24,7 +24,7 @@ const Navigation = () => {
                         </ul>
                     </div>
                     <div className='collapse navbar-collapse justify-content-end' id="login">
-                        <NavLink to="/Auth/Signup" className="linker">Sign Up</NavLink>
+                        <NavLink to="/PatientSignup" className="linker">Sign Up</NavLink>
                         <NavLink to="/Login" className="login">Login</NavLink>
                         {/* 
                         <NavLink to="/SignUp" className="linker">Sign Up</NavLink>

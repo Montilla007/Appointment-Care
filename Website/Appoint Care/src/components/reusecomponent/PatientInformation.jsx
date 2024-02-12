@@ -1,22 +1,33 @@
 import React from 'react'
 import '../../css/PatientInformation.css'
+import axios from 'axios';
 
 const PatientInformation = () => {
   const [info, setInfo] = React.useState([])
+
   React.useEffect(() => {
-    const res = fetch(`http://localhost:3001/api/v1/auth/users?fbclid=IwAR0qF66AZT0pB60K6KGwZvbm3SnZuogabxTkZZcmtemHG7eq4dgpoLXjKVQ`)
-      .then((res) => res.json())
-      .then(data => setInfo(data))
-      .catch(error => console.error('Error fetching data:', error));
-  }, [])
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/api/v1/auth/users');
+        setInfo(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const display = info.map(x => {
     return (
       <div key={x._id}>
         <h1>{x.Fname} {x.Lname}</h1>
         <h2>{x.age}</h2>
+        <h3>{x.task}</h3>
+        <h3>{x.email}</h3>
       </div>
-    )
-  })
+    );
+  });
   return (
     <section>
       <div className="container patient-page">

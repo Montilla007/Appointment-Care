@@ -17,20 +17,25 @@
     margin-left: 30px;
 }
 
-.signup-form label {
+.input-control input:focus{
+    background-color: #ffffff;
+}
+.input-control label{
     font-weight: 500;
     text-align: left;
     padding: 10px 0;
 }
-
-.signup-form input {
+.input-control input{
     border: 2px solid #E6E6E6;
     border-radius: 8px;
     width: 500px;
     height: 50px;
     padding-left: 20px;
 }
-
+.input-control .error{
+    font-size: 14px;
+    text-align: left;
+}
 .submit-signup {
     margin-top: 30px;
     width: 500px;
@@ -40,33 +45,35 @@
     color: white;
     border: 0;
 }
-
-#male,
-#female,
-#Patient,
-#Doctor {
+.submit-signup:active{
+    background-color: #6EAB36;
+}
+#Patient,#Doctor, #female,#male{
     width: 20px;
     height: 20px;
+    margin-right: 10px;
+    padding: 0;
 }
-
-.radio-button-container {
-    display: flex;
-    align-items: center;
-}
-
-.radio-button {
-    margin-right: 5px;
-}
-
-.radio-button-text {
+#MaleLabel,#FemaleLabel,#PatientLabel,#DoctorLabel{
     font-size: 20px;
 }
+.custom-file{
+    border: 2px solid yellow;
+    width: 100%;
 
-/* Additional CSS for aligning the radio buttons and labels */
-.radio-button {
-    margin-right: 5px;
 }
+.upload label{
+    text-align: left;
+    width: 500px;
+    font-weight: 500;
+    font-size: 20px;
 
-.radio-button-text {
-    margin-left: 10px;
+}
+.upload input{
+    margin-top: 5px;
+    border: 2px solid #E6E6E6 ;
+    width: 500px;
+    text-align: left;
+    font-size: 18px;
+
 }
