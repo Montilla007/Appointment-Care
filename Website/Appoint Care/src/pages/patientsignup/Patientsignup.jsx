@@ -1,47 +1,157 @@
 import React, { useState } from 'react';
 import '../../css/Patientsignup.css';
+
 import WelcomeDesign from '../../components/reusecomponent/WelcomeDesign';
 import axios from 'axios';
 
 const Patientsignup = () => {
     const [form, setForm] = useState({
-        task: "",
         Fname: "",
         Lname: "",
         age: "",
         number: "",
-        gender: "",
         email: "",
         password: "",
         confirmPassword: "",
-        image: "",
+        gender: "", // Added gender field
+        task: "", // Added task field
+        image: null, // Added image field
     });
 
-    const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setForm(prevState => ({
-            ...prevState,
-            [name]: type === "checkbox" ? checked : value
-        }));
+    const [errors, setErrors] = useState({
+        Fname: '',
+        Lname: '',
+        age: '',
+        number: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        gender: '', // Added gender field
+        task: '', // Added task field
+    });
+    console.log(form)
+    const [emailExists, setEmailExists] = useState(false); // Define setEmailExists here
+
+    const handleChange = (event) => {
+        const { name, value, type, files } = event.target;
+
+        // If input type is file, store the file object
+        const newValue = type === 'file' ? files[0] : value;
+
+        setForm({
+            ...form,
+            [name]: newValue
+        });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post(
-                "http://localhost:3001/api/v1/Auth/SignUp",
-                form
-            );
-            console.log(response.data);
-        } catch (error) {
-            console.error("Registration failed:", error.response.data);
+    const handleValidation = async (event) => {
+        event.preventDefault();
+
+        let newErrors = {};
+        let isValid = true;
+
+        // Validate First Name
+        if (!form.Fname) {
+            newErrors.Fname = 'First Name is required';
+            isValid = false;
+        } else {
+            newErrors.Fname = '';
+        }
+
+        // Validate Last Name
+        if (!form.Lname) {
+            newErrors.Lname = 'Last Name is required';
+            isValid = false;
+        } else {
+            newErrors.Lname = '';
+        }
+
+        // Validate Age
+        if (!form.age) {
+            newErrors.age = 'Age is required';
+            isValid = false;
+        } else {
+            newErrors.age = '';
+        }
+
+        // Validate Phone Number
+        if (!form.number) {
+            newErrors.number = 'Phone Number is required';
+            isValid = false;
+        } else {
+            newErrors.number = '';
+        }
+
+        // Validate Email
+        if (!form.email) {
+            newErrors.email = 'Email is required';
+            isValid = false;
+        } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+            newErrors.email = 'Email is invalid';
+            isValid = false;
+        } else {
+            newErrors.email = '';
+        }
+
+        // Validate Password
+        if (!form.password) {
+            newErrors.password = 'Password is required';
+            isValid = false;
+        } else {
+            newErrors.password = '';
+        }
+
+        // Validate Confirm Password
+        if (!form.confirmPassword) {
+            newErrors.confirmPassword = 'Confirm Password is required';
+            isValid = false;
+        } else if (form.confirmPassword !== form.password) {
+            newErrors.confirmPassword = 'Passwords do not match';
+            isValid = false;
+        } else {
+            newErrors.confirmPassword = '';
+        }
+
+        // Validate Gender
+        if (!form.gender) {
+            newErrors.gender = 'Gender is required';
+            isValid = false;
+        } else {
+            newErrors.gender = '';
+        }
+
+        // Validate Task
+        if (!form.task) {
+            newErrors.task = 'Task is required';
+            isValid = false;
+        } else {
+            newErrors.task = '';
+        }
+
+        setErrors(newErrors);
+
+        if (isValid) {
+            try {
+                const response = await axios.post(
+                    "http://localhost:3001/api/v1/Auth/SignUp",
+                    form
+                );
+                console.log(response.data);
+                // Reset emailExists state
+                setEmailExists(false);
+            } catch (error) {
+                if (error.response && error.response.status === 500) {
+                    setEmailExists(true);
+                } else {
+                    console.error("Registration failed:", error.response.data);
+                }
+            }
         }
     };
     const isValidEmail = (email) => {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
     };
-    const passwordsMatch = form.password === form.confirmPassword;
 
     return (
         <section className='patient-signup'>
@@ -53,126 +163,45 @@ const Patientsignup = () => {
                         <div className="row">
                             <div className="col-4"></div>
                             <div className="col-4">
-                                <form onSubmit={handleSubmit} className='form signup-form mx-auto'>
+                                <form onSubmit={handleValidation} className='form signup-form mx-auto'>
                                     <h2 style={{ color: '#6EAB36' }}>Sign up</h2>
                                     <h4>Please complete the following details to proceed</h4>
                                     <div className="input-control">
-                                        <label className="d-block" htmlFor="firstName-patient">First Name *</label>
-                                        <input
-                                            className={`form-control ${form.Fname ? 'is-valid' : 'is-invalid'}`}
-                                            type="text"
-                                            placeholder="Enter your First name"
-                                            id="firstName-patient"
-                                            required
-                                            onChange={handleChange}
-                                            name="Fname"
-                                            value={form.Fname}
-                                        />
-                                        <div className={`error ${form.Fname ? 'valid-feedback' : 'invalid-feedback'}`}>
-                                            {form.Fname ? "Looks Good" : "Please Provide A First Name"}
-                                        </div>
+                                        <label htmlFor="exampleInputFname" className="form-label d-block">First Name*</label>
+                                        <input type="text" className={`form-control ${form.Fname && !errors.Fname ? 'is-valid' : ''} ${errors.Fname ? 'is-invalid' : ''}`} id="exampleInputFname" name="Fname" value={form.Fname} onChange={handleChange} />
+                                        {errors.Fname && <div className="error">{errors.Fname}</div>}
                                     </div>
                                     <div className="input-control">
-                                        <label className="d-block" htmlFor="lastName-patient">Last Name *</label>
-                                        <input
-                                            className={`form-control ${form.Lname ? 'is-valid' : 'is-invalid'}`}
-                                            type="text"
-                                            placeholder="Enter your Last Name"
-                                            id="lastName-patient"
-                                            required
-                                            onChange={handleChange}
-                                            name="Lname"
-                                            value={form.Lname}
-                                        />
-                                        <div className={`error ${form.Lname ? 'valid-feedback' : 'invalid-feedback'}`}>
-                                            {form.Lname ? "Looks Good" : "Please Provide A Last Name"}
-                                        </div>
+                                        <label htmlFor="exampleInputLname" className="form-label d-block">Last Name*</label>
+                                        <input type="text" className={`form-control ${form.Lname && !errors.Lname ? 'is-valid' : ''} ${errors.Lname ? 'is-invalid' : ''}`} id="exampleInputLname" name="Lname" value={form.Lname} onChange={handleChange} />
+                                        {errors.Lname && <div className="error">{errors.Lname}</div>}
                                     </div>
                                     <div className="input-control">
-                                        <label className="d-block" htmlFor="age-patient">Age *</label>
-                                        <input
-                                            className={`form-control ${form.age ? 'is-valid' : 'is-invalid'}`}
-                                            type="number"
-                                            placeholder="Enter your Age"
-                                            id="age-patient"
-                                            required
-                                            onChange={handleChange}
-                                            name="age"
-                                            value={form.age}
-                                        />
-                                        <div className={`error ${form.age ? 'valid-feedback' : 'invalid-feedback'}`}>
-                                            {form.age ? "Looks Good" : "Please Provide An Age"}
-                                        </div>
+                                        <label htmlFor="exampleInputAge" className="form-label d-block">Age*</label>
+                                        <input type="number" className={`form-control ${form.age && !errors.age ? 'is-valid' : ''} ${errors.age ? 'is-invalid' : ''}`} id="exampleInputAge" name="age" value={form.age} onChange={handleChange} />
+                                        {errors.age && <div className="error">{errors.age}</div>}
                                     </div>
                                     <div className="input-control">
-                                        <label className="d-block" htmlFor="phonenumber-patient">Phone Number *</label>
-                                        <input
-                                            className={`form-control ${form.number ? 'is-valid' : 'is-invalid'}`}
-                                            type="text"
-                                            placeholder="Enter your Phone Number"
-                                            id="phonenumber-patient"
-                                            required
-                                            onChange={handleChange}
-                                            name="number"
-                                            value={form.number}
-                                        />
-                                        <div className={`error ${form.number ? 'valid-feedback' : 'invalid-feedback'}`}>
-                                            {form.number ? "Looks Good" : "Please Provide A Phone Number"}
-                                        </div>
+                                        <label htmlFor="exampleInputNumber" className="form-label d-block">Phone Number*</label>
+                                        <input type="text" className={`form-control ${form.number && !errors.number ? 'is-valid' : ''} ${errors.number ? 'is-invalid' : ''}`} id="exampleInputNumber" name="number" value={form.number} onChange={handleChange} />
+                                        {errors.number && <div className="error">{errors.number}</div>}
                                     </div>
                                     <div className="input-control">
-                                        <label className="d-block" htmlFor="email-patient">Email *</label>
-                                        <input
-                                            className={`form-control ${form.email && isValidEmail(form.email) ? 'is-valid' : 'is-invalid'}`}
-                                            type="email"
-                                            placeholder="Enter your Email"
-                                            id="email-patient"
-                                            required
-                                            onChange={handleChange}
-                                            name="email"
-                                            value={form.email}
-                                            autoComplete="email"
-                                        />
-                                        <div className={`error ${form.email && isValidEmail(form.email) ? 'valid-feedback' : 'invalid-feedback'}`}>
-                                            {form.email ? (isValidEmail(form.email) ? "Looks Good" : "Please Provide a Valid Email") : "Please Provide An Email"}
-                                        </div>
+                                        <label htmlFor="exampleInputEmail" className="form-label d-block">Email address*</label>
+                                        <input autoComplete='username' type="email" className={`form-control ${form.email && !errors.email ? 'is-valid' : ''} ${errors.email ? 'is-invalid' : ''}`} id="exampleInputEmail" name="email" value={form.email} onChange={handleChange} />
+                                        {errors.email && <div className="error">{errors.email}</div>}
                                     </div>
                                     <div className="input-control">
-                                        <label className="d-block" htmlFor="password-patient">Password *</label>
-                                        <input
-                                            type="password"
-                                            placeholder="Enter password"
-                                            id="password-patient"
-                                            required
-                                            onChange={handleChange}
-                                            name="password"
-                                            value={form.password}
-                                            autoComplete="new-password"
-                                            pattern=".{8,}" // Pattern for at least 8 characters
-                                            className={`form-control ${form.password && form.password.length >= 8 ? 'is-valid' : 'is-invalid'}`}
-                                        />
-                                        <div className={`error ${form.password && form.password.length >= 8 ? 'valid-feedback' : 'invalid-feedback'}`}>
-                                            {form.password && form.password.length >= 8 ? "Looks Good" : "Password must be at least 8 characters long"}
-                                        </div>
+                                        <label htmlFor="exampleInputPassword" className="form-label d-block">Password*</label>
+                                        <input autoComplete='new-password' type="password" className={`form-control ${form.password && !errors.password ? 'is-valid' : ''} ${errors.password ? 'is-invalid' : ''}`} id="exampleInputPassword" name="password" value={form.password} onChange={handleChange} />
+                                        {errors.password && <div className="error">{errors.password}</div>}
                                     </div>
                                     <div className="input-control">
-                                        <label className="d-block" htmlFor="confirmPassword-patient">Confirm Password *</label>
-                                        <input
-                                            type="password"
-                                            placeholder="Confirm password"
-                                            id="confirmPassword-patient"
-                                            autoComplete="new-password"
-                                            required
-                                            onChange={handleChange}
-                                            name="confirmPassword"
-                                            value={form.confirmPassword}
-                                            pattern={form.password}
-                                            className={`form-control ${passwordsMatch ? 'is-valid' : 'is-invalid'}`}
-                                        />
-                                        <div className={`error ${passwordsMatch ? 'valid-feedback' : 'invalid-feedback'}`}>
-                                            {passwordsMatch ? "Passwords match" : "Passwords do not match"}
-                                        </div>
+                                        <label htmlFor="exampleInputConfirmPassword" className="form-label d-block">Confirm Password*</label>
+                                        <input autoComplete='new-password' type="password" className={`form-control ${form.confirmPassword && !errors.confirmPassword ? 'is-valid' : ''} ${errors.confirmPassword ? 'is-invalid' : ''}`} id="exampleInputConfirmPassword" name="confirmPassword" value={form.confirmPassword} onChange={handleChange} />
+                                        {errors.confirmPassword && <div className="error">{errors.confirmPassword}</div>}
                                     </div>
+
                                     <div className='input-control'>
                                         <label className='d-block radio-button-text'>Select your Gender:</label>
                                         <div className='row align-items-center'>
@@ -185,10 +214,9 @@ const Patientsignup = () => {
                                                 <label id="MaleLabel" className='radio-button-text' htmlFor="female">Male</label>
                                             </div>
                                         </div>
+                                        {errors.gender && <div className="error">{errors.gender}</div>}
                                     </div>
 
-                                    <div>
-                                    </div>
                                     <div className='input-control'>
                                         <label className='d-block radio-button-text'>Patient or Doctor: </label>
                                         <div className='row align-items-center'>
@@ -201,14 +229,16 @@ const Patientsignup = () => {
                                                 <label id="DoctorLabel" className='radio-button-text' htmlFor="Doctor">Doctor</label>
                                             </div>
                                         </div>
+                                        {errors.task && <div className="error">{errors.task}</div>}
                                     </div>
                                     <div className='upload mt-4'>
-                                        <label htmlFor="inputGroupFile01">Upload a Profile Picture <i class="fa-solid fa-camera"></i> </label>
+                                        <label htmlFor="inputGroupFile01">Upload a Profile Picture <i className="fa-solid fa-camera"></i> </label>
                                         <div>
-                                            <input type="file" class="custom-file-input" id="inputGroupFile01" onChange={handleChange} value={form.image} name='image' />
+                                            <input type="file" className="custom-file-input" id="inputGroupFile01" onChange={handleChange} name='image' />
                                         </div>
                                     </div>
-                                    <button className=" d-block mx-auto submit-signup">Submit</button>
+                                    <button type="submit" className=" d-block mx-auto submit-signup">Submit</button>
+                                    {emailExists && <div className="alert alert-danger alert-email" role="alert">Email already exists. Please use another email.</div>}
                                 </form>
                             </div>
                             <div className="col-4">

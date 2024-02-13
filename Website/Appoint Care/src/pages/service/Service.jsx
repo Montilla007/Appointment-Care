@@ -57,7 +57,6 @@ const Service = () => {
         </div>
       </section>
       <ServiceProvider />
-      <FindDoctor />
       <section>
         <div className='container flex-column justify-content-center align-items-center text-center mt-5 mb-5'>
           <div className="Top-Doctors">

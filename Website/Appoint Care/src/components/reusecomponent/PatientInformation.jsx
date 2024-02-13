@@ -25,6 +25,7 @@ const PatientInformation = () => {
         <h2>{x.age}</h2>
         <h3>{x.task}</h3>
         <h3>{x.email}</h3>
+        <button>Delete</button>
       </div>
     );
   });

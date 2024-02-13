@@ -30,3 +30,17 @@
     color: white;
     border: 0;
 }
+.error-message{
+    font-size: 18px;
+    color: red;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.success-message {
+    font-size: 18px;
+    color: green; /* Change color to green */
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}

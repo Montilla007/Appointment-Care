@@ -35,6 +35,7 @@
 .input-control .error{
     font-size: 14px;
     text-align: left;
+    color: red;
 }
 .submit-signup {
     margin-top: 30px;
@@ -76,4 +77,8 @@
     text-align: left;
     font-size: 18px;
 
+}
+.alert-email{
+    margin-top: 20px;
+    width: 500px;
 }

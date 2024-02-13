@@ -1,0 +1,68 @@
+.doctor-container{
+    display: flex;
+    align-items: start;
+    padding: 20px;
+    background-color: #FAFAFA;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.first-half{
+    display: flex;
+    align-items: center;
+}
+.second-half {
+    width: 100%; 
+    margin-top: 5px;
+}
+.second-half hr{
+    width: 100%;
+}
+.availability-consultation{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.avatar-container img{
+    border-radius: 50%;
+    width: 100px;
+    margin-right: 20px;
+}
+.personal-details h2{
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-right: 200px;
+}
+.svg-component svg{
+    margin-right: 10px;
+}
+.svg-component span{
+    margin-right: 10px;
+}
+.svg-row{
+    display: flex;
+}
+.btn-viewprofile{
+    color: #007E85;
+    border: 1px solid #007E85;  
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: 400;
+}
+.btn-viewprofile:hover{
+    border-color: #007E85;
+    background-color: #007E85;
+    color: white;
+}
+.btn-appointment{
+    color: white;
+    background-color: #007E85;
+    border: 1px solid #007E85;  
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: 400;
+}
+.btn-appointment:hover{
+    background-color: #6EAB36;
+    border-color: #6EAB36;
+}
