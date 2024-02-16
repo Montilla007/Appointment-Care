@@ -1,3 +1,35 @@
 .FindDoctor-Section{
+    margin-top: 100px;
     margin-bottom: 100px;
 }
+.inputBox_container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    background-color: #ececec;
+    border-radius: 0.8em;
+    overflow: hidden;
+    margin-bottom: 50px;
+  }
+  
+  .search_icon {
+    height: 1em;
+    padding: 0 0.5em 0 0.8em;
+    fill: #abb2bf;
+  }
+  
+  .inputBox {
+    background-color: transparent;
+    color: black;
+    outline: none;
+    width: 100%;
+    border: 0;
+    padding: 0.5em 1.5em 0.5em 0;
+    font-size: 1em;
+  }
+  
+  ::placeholder {
+    color: #abb2bf;
+  }

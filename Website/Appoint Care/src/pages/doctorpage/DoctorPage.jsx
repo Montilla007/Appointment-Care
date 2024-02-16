@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../css/DoctorPage.css';
+import { NavLink } from "react-router-dom"
 
 
 const DoctorPage = () => {
@@ -36,9 +37,7 @@ const DoctorPage = () => {
               </a>
             </li>
             <li className="sidebar-item">
-              <a href="" className="sidebar-link">
-                <i className="fa-solid fa-right-from-bracket"></i>
-              </a>
+              <NavLink to="/" className="sidebar-link"><i className="fa-solid fa-right-from-bracket"></i></NavLink>
             </li>
           </ul>
         </aside>
@@ -56,8 +55,8 @@ const DoctorPage = () => {
                   <h2 id='number-of-new-patients'>104</h2>
                   <div className="row mt-5">
                     <div className="col-5 new-patients">
-                        <h3>New Patients</h3>
-                        <h3>40</h3>
+                      <h3>New Patients</h3>
+                      <h3>40</h3>
                     </div>
                     <div className="col-1"></div>
                     <div className="col-5 old-patients">
@@ -67,7 +66,7 @@ const DoctorPage = () => {
                   </div>
                 </div>
                 <div className="col-6">
-                  <img src="doctor2.png" alt="doctor2" id="doctorpage-doctor" />
+                  <img src="/src/assets/images/doctor2.png" alt="doctor2" id="doctorpage-doctor" />
                 </div>
               </div>
             </div>

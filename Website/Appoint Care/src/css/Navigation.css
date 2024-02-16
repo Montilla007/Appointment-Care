@@ -34,9 +34,9 @@
     position: relative;
     text-decoration: none;
     margin-right: 1.5em;
-    padding: 0 5px;
+    padding: 5px;
 }
-.nav-item::after {
+/* .nav-item::after {
     content: "";
     position: absolute;
     background-color: #007E85;
@@ -45,7 +45,7 @@
     left: 0;
     bottom: -10px;
     transition: 0.3s;
-}
+} */
 .nav-item:hover::after {
     width: 100%;
 }
@@ -56,16 +56,15 @@
 .nav-new{
     text-decoration: none;
     color: #6EAB36;
-    padding: 0 5px;
+    padding: 5px 15px;
 }
 .nav-new:hover{
     border-radius: 2rem;
     background-color: #007E85;
     color: white;
 }
-.active{
+.login:focus, .linker:focus, .nav-new:focus{
     background-color: #007E85;
     border-radius: 2rem;
-    display: inline-block;
     color: white;
 }

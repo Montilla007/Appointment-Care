@@ -13,9 +13,9 @@ const Patientsignup = () => {
         email: "",
         password: "",
         confirmPassword: "",
-        gender: "", // Added gender field
-        task: "", // Added task field
-        image: null, // Added image field
+        gender: "",
+        task: "",
+        image: null,
     });
 
     const [errors, setErrors] = useState({
@@ -26,8 +26,8 @@ const Patientsignup = () => {
         email: '',
         password: '',
         confirmPassword: '',
-        gender: '', // Added gender field
-        task: '', // Added task field
+        gender: '',
+        task: '',
     });
     console.log(form)
     const [emailExists, setEmailExists] = useState(false); // Define setEmailExists here
@@ -50,7 +50,6 @@ const Patientsignup = () => {
         let newErrors = {};
         let isValid = true;
 
-        // Validate First Name
         if (!form.Fname) {
             newErrors.Fname = 'First Name is required';
             isValid = false;
@@ -58,7 +57,6 @@ const Patientsignup = () => {
             newErrors.Fname = '';
         }
 
-        // Validate Last Name
         if (!form.Lname) {
             newErrors.Lname = 'Last Name is required';
             isValid = false;
@@ -66,7 +64,6 @@ const Patientsignup = () => {
             newErrors.Lname = '';
         }
 
-        // Validate Age
         if (!form.age) {
             newErrors.age = 'Age is required';
             isValid = false;
@@ -74,7 +71,6 @@ const Patientsignup = () => {
             newErrors.age = '';
         }
 
-        // Validate Phone Number
         if (!form.number) {
             newErrors.number = 'Phone Number is required';
             isValid = false;
@@ -82,7 +78,6 @@ const Patientsignup = () => {
             newErrors.number = '';
         }
 
-        // Validate Email
         if (!form.email) {
             newErrors.email = 'Email is required';
             isValid = false;
@@ -93,7 +88,6 @@ const Patientsignup = () => {
             newErrors.email = '';
         }
 
-        // Validate Password
         if (!form.password) {
             newErrors.password = 'Password is required';
             isValid = false;
@@ -101,7 +95,6 @@ const Patientsignup = () => {
             newErrors.password = '';
         }
 
-        // Validate Confirm Password
         if (!form.confirmPassword) {
             newErrors.confirmPassword = 'Confirm Password is required';
             isValid = false;
@@ -127,6 +120,17 @@ const Patientsignup = () => {
         } else {
             newErrors.task = '';
         }
+        const formData = new FormData();
+        formData.append('Fname', form.Fname);
+        formData.append('Lname', form.Lname);
+        formData.append('age', form.age);
+        formData.append('number', form.number);
+        formData.append('email', form.email);
+        formData.append('password', form.password);
+        formData.append('confirmPassword', form.confirmPassword);
+        formData.append('gender', form.gender);
+        formData.append('task', form.task);
+        formData.append('image', form.image); // Add image data
 
         setErrors(newErrors);
 

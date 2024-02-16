@@ -35,7 +35,7 @@ const PatientInformation = () => {
         <div className="row patient-infos">
           <div className="col-4"><h2>Patient Information</h2></div>
           <div className="col-4"><h2>Prescription</h2></div>
-          <div className="col-4"><h2>Lab Test</h2></div>
+          <div className="col-4"><h2>Schedule</h2></div>
         </div>
         <div className="row">
           <div className="main-2">
