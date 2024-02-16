@@ -13,6 +13,7 @@ import PatientInformation from "./components/reusecomponent/PatientInformation";
 import TopDoctors from './pages/topdoctors/TopDoctors';
 import DoctorProfile from "./pages/doctorprofile/DoctorProfile";
 import DefaultLayout from "./components/layouts/DefaultLayout";
+import Admin from "./pages/admin/Admin";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path='/DoctorInformation' element={<DoctorInformation />} />
           </Route>
           <Route path='/DoctorPage' element={<DoctorPage />} />
+          <Route path='/Admin' element={<Admin/>}></Route>
         </Routes>
       </BrowserRouter >
     </>
