@@ -23,6 +23,11 @@ const Login = () => {
             const response = await axios.post("http://localhost:3001/api/v1/auth/login", loginForm);
             console.log("Login Response:", response.data);
             setErrorMessage("Login Successfully")
+            if (response.data.task === "Doctor") {
+                // window.location.href = '/doctorpage';
+            } else if (response.data.task === "Patient") {
+                window.location.href = '/';
+            }
         } catch (error) {
             if (error.response && error.response.status === 401) {
                 console.error("Unauthorized: Incorrect email or password");

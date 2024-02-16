@@ -7,13 +7,14 @@ import axios from 'axios';
 
 
 const DoctorProfile = () => {
+    const [doctorInfo, setDoctorInfo] = React.useState([])
     const params = useParams();
     console.log(params.id)
     React.useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`http://localhost:3001/api/v1/auth/users/${params.id}`);
-                console.log(response.data);
+                setDoctorInfo(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -25,12 +26,12 @@ const DoctorProfile = () => {
             <div className="container">
                 <div className="header-card-section">
                     <div className="header-avatar">
-                        <img src="/src/assets/images/me.png"
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
                             alt="avatar"
                         />
                     </div>
                     <div className="personal-details">
-                        <h2>Lance Kian Flores, MD</h2>
+                        <h2>{doctorInfo.Fname} {doctorInfo.Lname}, MD</h2>
                         <span className='speciality'>Heart Surgeon</span>
                         <br />
                         <span>MD since 2010</span>

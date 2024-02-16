@@ -141,8 +141,8 @@ const Patientsignup = () => {
                     form
                 );
                 console.log(response.data);
-                // Reset emailExists state
                 setEmailExists(false);
+                window.location.href = "/Login"
             } catch (error) {
                 if (error.response && error.response.status === 500) {
                     setEmailExists(true);
@@ -172,37 +172,37 @@ const Patientsignup = () => {
                                     <h4>Please complete the following details to proceed</h4>
                                     <div className="input-control">
                                         <label htmlFor="exampleInputFname" className="form-label d-block">First Name*</label>
-                                        <input type="text" className={`form-control ${form.Fname && !errors.Fname ? 'is-valid' : ''} ${errors.Fname ? 'is-invalid' : ''}`} id="exampleInputFname" name="Fname" value={form.Fname} onChange={handleChange} />
+                                        <input placeholder='Enter First Name' type="text" className={`form-control ${form.Fname && !errors.Fname ? 'is-valid' : ''} ${errors.Fname ? 'is-invalid' : ''}`} id="exampleInputFname" name="Fname" value={form.Fname} onChange={handleChange} />
                                         {errors.Fname && <div className="error">{errors.Fname}</div>}
                                     </div>
                                     <div className="input-control">
                                         <label htmlFor="exampleInputLname" className="form-label d-block">Last Name*</label>
-                                        <input type="text" className={`form-control ${form.Lname && !errors.Lname ? 'is-valid' : ''} ${errors.Lname ? 'is-invalid' : ''}`} id="exampleInputLname" name="Lname" value={form.Lname} onChange={handleChange} />
+                                        <input placeholder='Enter Last Name' type="text" className={`form-control ${form.Lname && !errors.Lname ? 'is-valid' : ''} ${errors.Lname ? 'is-invalid' : ''}`} id="exampleInputLname" name="Lname" value={form.Lname} onChange={handleChange} />
                                         {errors.Lname && <div className="error">{errors.Lname}</div>}
                                     </div>
                                     <div className="input-control">
                                         <label htmlFor="exampleInputAge" className="form-label d-block">Age*</label>
-                                        <input type="number" className={`form-control ${form.age && !errors.age ? 'is-valid' : ''} ${errors.age ? 'is-invalid' : ''}`} id="exampleInputAge" name="age" value={form.age} onChange={handleChange} />
+                                        <input placeholder='Enter Your Age' type="number" className={`form-control ${form.age && !errors.age ? 'is-valid' : ''} ${errors.age ? 'is-invalid' : ''}`} id="exampleInputAge" name="age" value={form.age} onChange={handleChange} />
                                         {errors.age && <div className="error">{errors.age}</div>}
                                     </div>
                                     <div className="input-control">
                                         <label htmlFor="exampleInputNumber" className="form-label d-block">Phone Number*</label>
-                                        <input type="text" className={`form-control ${form.number && !errors.number ? 'is-valid' : ''} ${errors.number ? 'is-invalid' : ''}`} id="exampleInputNumber" name="number" value={form.number} onChange={handleChange} />
+                                        <input placeholder='Enter Your Phone Number' type="text" className={`form-control ${form.number && !errors.number ? 'is-valid' : ''} ${errors.number ? 'is-invalid' : ''}`} id="exampleInputNumber" name="number" value={form.number} onChange={handleChange} />
                                         {errors.number && <div className="error">{errors.number}</div>}
                                     </div>
                                     <div className="input-control">
                                         <label htmlFor="exampleInputEmail" className="form-label d-block">Email address*</label>
-                                        <input autoComplete='username' type="email" className={`form-control ${form.email && !errors.email ? 'is-valid' : ''} ${errors.email ? 'is-invalid' : ''}`} id="exampleInputEmail" name="email" value={form.email} onChange={handleChange} />
+                                        <input placeholder='Enter Your Email' autoComplete='username' type="email" className={`form-control ${form.email && !errors.email ? 'is-valid' : ''} ${errors.email ? 'is-invalid' : ''}`} id="exampleInputEmail" name="email" value={form.email} onChange={handleChange} />
                                         {errors.email && <div className="error">{errors.email}</div>}
                                     </div>
                                     <div className="input-control">
                                         <label htmlFor="exampleInputPassword" className="form-label d-block">Password*</label>
-                                        <input autoComplete='new-password' type="password" className={`form-control ${form.password && !errors.password ? 'is-valid' : ''} ${errors.password ? 'is-invalid' : ''}`} id="exampleInputPassword" name="password" value={form.password} onChange={handleChange} />
+                                        <input placeholder='Enter Your Password' autoComplete='new-password' type="password" className={`form-control ${form.password && !errors.password ? 'is-valid' : ''} ${errors.password ? 'is-invalid' : ''}`} id="exampleInputPassword" name="password" value={form.password} onChange={handleChange} />
                                         {errors.password && <div className="error">{errors.password}</div>}
                                     </div>
                                     <div className="input-control">
                                         <label htmlFor="exampleInputConfirmPassword" className="form-label d-block">Confirm Password*</label>
-                                        <input autoComplete='new-password' type="password" className={`form-control ${form.confirmPassword && !errors.confirmPassword ? 'is-valid' : ''} ${errors.confirmPassword ? 'is-invalid' : ''}`} id="exampleInputConfirmPassword" name="confirmPassword" value={form.confirmPassword} onChange={handleChange} />
+                                        <input placeholder='Enter Your Confirm Password' autoComplete='new-password' type="password" className={`form-control ${form.confirmPassword && !errors.confirmPassword ? 'is-valid' : ''} ${errors.confirmPassword ? 'is-invalid' : ''}`} id="exampleInputConfirmPassword" name="confirmPassword" value={form.confirmPassword} onChange={handleChange} />
                                         {errors.confirmPassword && <div className="error">{errors.confirmPassword}</div>}
                                     </div>
 

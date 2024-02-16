@@ -18,7 +18,6 @@ const Navigation = () => {
                             <li className="nav-item"><NavLink exact="true" to="/" className="nav-new">Home</NavLink></li>
                             <li className="nav-item"><NavLink to="/Service" className="nav-new">Service</NavLink></li>
                             <li className="nav-item"><NavLink to="/TopDoctors" className="nav-new">Find Doctor</NavLink></li>
-                            <li className="nav-item"><NavLink to="/DoctorPage" className="nav-new">Doctor Page </NavLink></li>
                             <li className="nav-item"><NavLink to="/PatientInformation" className="nav-new">Your Information</NavLink></li>
                             <li className="nav-item"><NavLink to="/Contact" className="nav-new">Contact Us</NavLink></li>
                         </ul>
