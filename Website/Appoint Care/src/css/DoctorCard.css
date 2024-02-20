@@ -50,6 +50,7 @@
     border-radius: 5px;
     padding: 5px 10px;
     font-weight: 400;
+    background-color: transparent;
 }
 .btn-viewprofile:hover{
     border-color: #007E85;

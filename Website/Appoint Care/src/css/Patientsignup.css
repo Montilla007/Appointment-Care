@@ -82,3 +82,19 @@
     margin-top: 20px;
     width: 500px;
 }
+.checkboxes{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+.checkboxes input{
+    width: 50px;
+    height: 20px;
+}
+.checkboxes label{
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0; 
+}

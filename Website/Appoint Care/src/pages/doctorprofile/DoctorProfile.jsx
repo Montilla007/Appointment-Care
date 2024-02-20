@@ -13,7 +13,7 @@ const DoctorProfile = () => {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/api/v1/auth/users/${params.id}`);
+                const response = await axios.get(`https://appointment-care-api.vercel.app/api/v1/auth/users/${params.id}`);
                 setDoctorInfo(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);

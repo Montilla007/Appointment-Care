@@ -17,6 +17,7 @@
 .doctor-phonenumber{
     border: 1px solid #007E85;
     padding: 5px;
+    background-color: transparent;
 }
 .body-section{
     margin-top: 30px;

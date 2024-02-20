@@ -62,7 +62,7 @@ const Contact = () => {
                   <p><i className="fas fa-envelope"></i> lafa.flores.up@phinmaed.com</p>
                   <p><i className="fas fa-map-marker-alt"></i> 28WV+R2R, Arellano St, Downtown District, Dagupan, 2400 Pangasinan</p>
                 </div>
-                <img src="Ellipse 793.png" alt="Ellipse" />
+                <img src="/src/assets/images/Ellipse 793.png" alt="Ellipse" />
                 <div className='contact-icons-2'>
                   <a href=""><i className="fa-brands fa-facebook"></i></a>
                   <a href=""><i className="fa-brands fa-instagram"></i></a>

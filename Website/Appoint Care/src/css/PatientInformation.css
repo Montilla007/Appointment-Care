@@ -1,3 +1,6 @@
+.patientinformation{
+    margin: 100px 0px;
+}
 .patient-page {
     margin-top: 40px;
     margin-bottom: 20px;
@@ -12,4 +15,48 @@
 
 .main-2 {
     margin-bottom: 500px;
+}
+.personal-info{
+    border: 1px solid #dee2e6;
+}
+.info-input label{
+    color: #1C1C1C;
+    font-weight: 700;
+
+}
+.info-input input{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    height: 50px;
+}
+.general-info{
+    border-right: 1px solid #dee2e6;
+}
+.general-info h5{
+    margin-bottom: 20px;
+}
+.change-profile{
+    object-position: top;
+    align-items: flex-end;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.save-changes{
+    background-color: #007E85;
+    width: 120px;
+    padding: 10px;
+    color: white;
+    font-weight: 500;
+    border: 0;
+    border-radius: 5px;
+}
+.cancel-changes{
+    width: 120px;
+    padding: 10px;
+    border: 1px solid #007E85;
+    background-color: transparent;
 }

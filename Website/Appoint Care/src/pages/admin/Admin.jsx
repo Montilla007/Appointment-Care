@@ -10,7 +10,7 @@ const Admin = () => {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/v1/auth/users');
+        const response = await axios.get(`https://appointment-care-api.vercel.app/api/v1/auth/users`);
         setDoctorData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -21,8 +21,8 @@ const Admin = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/api/v1/auth/users/${id}`)
-      const response = await axios.get('http://localhost:3001/api/v1/auth/users');
+      await axios.delete(`https://appointment-care-api.vercel.app/api/v1/auth/users/${id}`)
+      const response = await axios.get('https://appointment-care-api.vercel.app/api/v1/auth/users');
       setDoctorData(response.data);
     } catch {
       console.error('Error deleting user:', error);
@@ -30,7 +30,7 @@ const Admin = () => {
   }
 
   const displayDoctor = doctorData.map(x => {
-    if (x.task === "Doctor") {
+    if (x.role === "Doctor") {
       return (
         <tr key={x._id}>
           <th scope="row">{x._id}</th>
@@ -40,14 +40,14 @@ const Admin = () => {
           <td>{x.age}</td>
           <td>{x.email}</td>
           <td className="td-button"><button type="button" className="btn btn-primary admin-button">Update</button></td>
-          <td className="td-button"><button type="button" className="btn btn-danger admin-button"  onClick={() => handleDelete(x._id)}>Delete</button></td>
+          <td className="td-button"><button type="button" className="btn btn-danger admin-button" onClick={() => handleDelete(x._id)}>Delete</button></td>
         </tr>
       );
     }
     return null;
   });
   const displayPatient = doctorData.map(x => {
-    if (x.task === "Patient") {
+    if (x.role === "Patient") {
       return (
         <tr key={x._id}>
           <th scope="row">{x._id}</th>
@@ -57,7 +57,7 @@ const Admin = () => {
           <td>{x.age}</td>
           <td>{x.email}</td>
           <td className="td-button"><button type="button" className="btn btn-primary admin-button">Update</button></td>
-          <td className="td-button"><button type="button" className="btn btn-danger admin-button">Delete</button></td>
+          <td className="td-button"><button type="button" className="btn btn-danger admin-button" onClick={() => handleDelete(x._id)}>Delete</button></td>
         </tr>
       );
     }

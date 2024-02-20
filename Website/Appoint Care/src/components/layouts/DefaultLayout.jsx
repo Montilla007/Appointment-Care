@@ -2,12 +2,12 @@ import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom';
 import Navigation from '../navigation/Navigation';
 import Footer from '../footer/Footer';
-const DefaultLayout = () => {
+const DefaultLayout = ({ userData }) => {
   return (
     <div>
-        <Navigation/>
-        <Outlet/>
-        <Footer/>
+      <Navigation userData={userData} />
+      <Outlet />
+      <Footer />
     </div>
   )
 }

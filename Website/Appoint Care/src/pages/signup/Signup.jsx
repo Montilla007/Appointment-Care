@@ -1,7 +1,7 @@
 import React from 'react';
-import WelcomeDesign from '../../../components/reusecomponent/WelcomeDesign';
+import WelcomeDesign from '../../components/reusecomponent/WelcomeDesign';
 import { NavLink } from 'react-router-dom';
-// import '../../css/Signup.css';
+import "../../css/Signup.css"
 
 const Signup = () => {
   return (
@@ -12,7 +12,7 @@ const Signup = () => {
           <hr />
           <div className='flex-column justify-content-center align-items-center'>
             <NavLink to='/PatientSignup' className="registeras">Register as Patient </NavLink>
-            <NavLink to='/PatientSignup' className="registeras">Register as Doctor</NavLink>
+            <NavLink to='/DoctorSignup' className="registeras">Register as Doctor</NavLink>
           </div>
         </div>
       </div>

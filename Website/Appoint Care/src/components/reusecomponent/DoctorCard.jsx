@@ -10,7 +10,7 @@ const DoctorCard = (props) => {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:3001/api/v1/auth/users');
+                const response = await axios.get('https://appointment-care-api.vercel.app/api/v1/auth/users');
                 setInfo(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -20,7 +20,7 @@ const DoctorCard = (props) => {
         fetchData();
     }, []);
     const doctorCard = info.map((x) => {
-        if (x.task === "Doctor") {
+        if (x.role === "Doctor") {
             return (
                 <div key={x._id} className='container'>
                     <div className='doctor-container'>

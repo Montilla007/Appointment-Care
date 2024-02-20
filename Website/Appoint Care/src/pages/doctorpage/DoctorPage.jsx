@@ -4,6 +4,14 @@ import { NavLink } from "react-router-dom"
 
 
 const DoctorPage = () => {
+  const handleLogout = () => {
+    // Remove token and userData from localStorage
+    localStorage.removeItem('userData');
+    localStorage.removeItem('token');
+
+    window.location.href = '/login'; // Corrected
+  };
+
   return (
     <section className='doctor-page'>
       <div className="wrapper">
@@ -37,7 +45,7 @@ const DoctorPage = () => {
               </a>
             </li>
             <li className="sidebar-item">
-              <NavLink to="/" className="sidebar-link"><i className="fa-solid fa-right-from-bracket"></i></NavLink>
+              <NavLink to="/" onClick={handleLogout} className="sidebar-link"><i className="fa-solid fa-right-from-bracket"></i></NavLink>
             </li>
           </ul>
         </aside>
