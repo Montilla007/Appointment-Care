@@ -2,9 +2,8 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-const UserSchema = new mongoose.Schema({
-  
-  task: {
+const userSchema = new mongoose.Schema({
+  role: {
     type: String,
     required: [true, 'Please provide task'],
     enum: ['Doctor', 'Patient'],
@@ -22,9 +21,8 @@ const UserSchema = new mongoose.Schema({
     maxLength: 50,
   },
   number: {
-    type: Number,
+    type: String,
     required: [true, 'Please provide number'],
-    minLength: 12,
     maxLength: 12,
   },
   gender: {
@@ -52,30 +50,104 @@ const UserSchema = new mongoose.Schema({
     required: [true, 'Please provide password'],
     minlength: 6,
   },
-})
+  imageData: {
+    type: Buffer, // Store binary image data
+    required: [false, 'Please provide imageData']
+  },
+  // Common fields for both doctors and patients
+  // Add other common fields here
 
-function removeTime(date) {
-  // Ensure that the date is a valid Date object
-  if (date instanceof Date) {
-    // Set the time part to midnight
-    date.setUTCHours(0, 0, 0, 0);
+  hn: {
+    type: Number,
+    required: function () {
+      return this.role === 'Doctor';
+    }
+  },
+  barangay: {
+    type: String,
+    required: function () {
+      return this.role === 'Doctor';
+    }
+  },
+  municipality: {
+    type: String,
+    required: function () {
+      return this.role === 'Doctor';
+    }
+  },
+  province: {
+    type: String,
+    required: function () {
+      return this.role === 'Doctor';
+    }
+
+  },
+  status: {
+    type: String,
+    required: function () {
+      return this.role === 'Doctor';
+    },
+    enum: ['Accept', 'Reject', 'Pending'],
+  },
+  specialty: {
+    type: String,
+    required: function () {
+      return this.role === 'Doctor';
+    },
+  },
+  md: {
+    type: Number,
+    required: function () {
+      return this.role === 'Doctor';
+    },
+    min: [0, 'MD price must be at least 0'],
+  },
+  consultPrice: {
+    type: Number,
+    required: function () {
+      return this.role === 'Doctor';
+    },
+    min: [0, 'Consultation price must be at least 0'],
+  },
+  f2f: {
+    type: Boolean,
+    required: function () {
+      return this.role === 'Doctor';
+    },
+  },
+  online: {
+    type: Boolean,
+    required: function () {
+      return this.role === 'Doctor';
+    },
+  },
+  // Define a schema for patients
+  consultation: {
+    type: String,
+    required: function () {
+      return this.role === 'Patient';
+    },
   }
-  return date;
-}
+});
 
-UserSchema.pre('save', async function () {
+userSchema.pre('save', async function () {
   const salt = await bcrypt.genSalt(10)
   this.password = await bcrypt.hash(this.password, salt)
 })
 
-UserSchema.methods.createJWT = function () {
-  return jwt.sign({ userId: this._id, name: this.Fname },
+userSchema.methods.createJWT = function () {
+  return jwt.sign({ userId: this._id, name: this.Fname, role: this.role },
     process.env.JWT_SECRET, { expiresIn: process.env.JWT_LIFETIME, })
 }
 
-UserSchema.methods.comparePassword = async function (entryPassword) {
+userSchema.methods.comparePassword = async function (entryPassword) {
   const isMatch = await bcrypt.compare(entryPassword, this.password)
   return isMatch
 }
 
-module.exports = mongoose.model('User', UserSchema)
+userSchema.methods.updateImageData = async function (imageData) {
+  this.imageData = imageData;
+  await this.save();
+};
+
+module.exports = mongoose.model('User', userSchema)

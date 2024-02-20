@@ -1,16 +1,20 @@
 require('dotenv').config();
 require('express-async-errors');
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 // connectDB
 const connectDB = require('./db/connect')
 
-const authenticateUser = require('./middleware/authentication');
+const authenticateUser = require('./middleware/userAuthentication');
+// const authenticateAdmin = require('./middleware/adminAuthentication');
 
 // routers
 const authRouter = require('./routes/auth')
 const homeRouter = require('./routes/home')
+const personRouter = require('./routes/person')
+// const adminRouter = require('./routes/admin')
 
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
@@ -18,15 +22,22 @@ const errorHandlerMiddleware = require('./middleware/error-handler');
 
 app.use(express.json());
 // extra packages
+app.use(cors());
 
 // routes
 app.use('/api/v1/Auth', authRouter)
+app.use('/api/v1/Person', personRouter)
 app.use('/api/v1/home', authenticateUser, homeRouter)
+// app.use('/api/v1/admin', authenticateAdmin, adminRouter)
+
+app.get("/api/v1/test", async (req, res) => {
+  res.json({ message: 'User deleted successfully' });
+});
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 const start = async () => {
   try {
