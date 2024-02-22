@@ -15,11 +15,15 @@ const DoctorSignup = () => {
     confirmPassword: "",
     imageData: null,
     status: "Pending",
-    speciality: "",
-    mdYear: "", // Renamed from age
-    consultPrice: "", // New field for consultation price
-    f2f: false,
+    specialty: "",
+    md: "",
+    consultPrice: "",
+    f2f: true,
     online: false,
+    hn: "",
+    barangay: "",
+    municipality: "",
+    province: "",
   });
 
   const [errors, setErrors] = useState({
@@ -31,9 +35,13 @@ const DoctorSignup = () => {
     password: '',
     confirmPassword: '',
     gender: '',
-    speciality: '', // New field for speciality validation
-    mdYear: '', // New field for MD year validation
-    consultPrice: '', // New field for consultation price validation
+    specialty: '',
+    md: '',
+    consultPrice: '',
+    hn: "",
+    barangay: "",
+    municipality: "",
+    province: "",
   });
 
   const [emailExists, setEmailExists] = useState(false);
@@ -117,18 +125,18 @@ const DoctorSignup = () => {
       newErrors.gender = '';
     }
 
-    if (!form.speciality) {
-      newErrors.speciality = 'Speciality is required';
+    if (!form.specialty) {
+      newErrors.specialty = 'Speciality is required';
       isValid = false;
     } else {
-      newErrors.speciality = '';
+      newErrors.specialty = '';
     }
 
-    if (!form.mdYear) {
-      newErrors.mdYear = 'MD Year is required';
+    if (!form.md) {
+      newErrors.md = 'MD Year is required';
       isValid = false;
     } else {
-      newErrors.mdYear = '';
+      newErrors.md = '';
     }
 
     if (!form.consultPrice) {
@@ -137,22 +145,46 @@ const DoctorSignup = () => {
     } else {
       newErrors.consultPrice = '';
     }
+    if (!form.hn) {
+      newErrors.hn = 'House Number is required';
+      isValid = false;
+    } else {
+      newErrors.hn = '';
+    }
+
+    if (!form.barangay) {
+      newErrors.barangay = 'Barangay is required';
+      isValid = false;
+    } else {
+      newErrors.barangay = '';
+    }
+
+    if (!form.municipality) {
+      newErrors.municipality = 'Municipality is required';
+      isValid = false;
+    } else {
+      newErrors.municipality = '';
+    }
+
+    if (!form.province) {
+      newErrors.province = 'Province is required';
+      isValid = false;
+    } else {
+      newErrors.province = '';
+    }
+
 
     setErrors(newErrors);
 
     if (isValid) {
       try {
-        const formData = new FormData();
-        for (let key in form) {
-          formData.append(key, form[key]);
-        }
         const response = await axios.post(
           "https://appointment-care-api.vercel.app/api/v1/auth/Signup",
-          formData
+          form
         );
         console.log(response.data);
         setEmailExists(false);
-        window.location.href = "/Login"; // Redirect after successful submission
+        window.location.href = "/Login";
       } catch (error) {
         if (error.response && error.response.status === 500) {
           setEmailExists(true);
@@ -178,12 +210,12 @@ const DoctorSignup = () => {
                   <h4>Please complete the following details to proceed</h4>
                   <div className="input-control">
                     <label htmlFor="exampleInputFname" className="form-label d-block">First Name*</label>
-                    <input placeholder='Enter your First Name' type="text" className={`form-control ${form.Fname && !errors.Fname ? 'is-valid' : ''} ${errors.Fname ? 'is-invalid' : ''}`} id="exampleInputFname" name="Fname" value={form.Fname} onChange={handleChange} />
+                    <input placeholder='Enter your First Name' style={{ textTransform: 'capitalize' }} type="text" className={`form-control ${form.Fname && !errors.Fname ? 'is-valid' : ''} ${errors.Fname ? 'is-invalid' : ''}`} id="exampleInputFname" name="Fname" value={form.Fname} onChange={handleChange} />
                     {errors.Fname && <div className="error">{errors.Fname}</div>}
                   </div>
                   <div className="input-control">
                     <label htmlFor="exampleInputLname" className="form-label d-block">Last Name*</label>
-                    <input placeholder='Enter your Last Name' type="text" className={`form-control ${form.Lname && !errors.Lname ? 'is-valid' : ''} ${errors.Lname ? 'is-invalid' : ''}`} id="exampleInputLname" name="Lname" value={form.Lname} onChange={handleChange} />
+                    <input placeholder='Enter your Last Name' style={{ textTransform: 'capitalize' }} type="text" className={`form-control ${form.Lname && !errors.Lname ? 'is-valid' : ''} ${errors.Lname ? 'is-invalid' : ''}`} id="exampleInputLname" name="Lname" value={form.Lname} onChange={handleChange} />
                     {errors.Lname && <div className="error">{errors.Lname}</div>}
                   </div>
                   <div className="input-control">
@@ -197,19 +229,50 @@ const DoctorSignup = () => {
                     {errors.number && <div className="error">{errors.number}</div>}
                   </div>
                   <div className="input-control">
-                    <label htmlFor="exampleInputSpeciality" className="form-label d-block">Speciality*</label>
-                    <input placeholder='Enter your Speciality' type="text" className={`form-control ${form.speciality && !errors.speciality ? 'is-valid' : ''} ${errors.speciality ? 'is-invalid' : ''}`} id="exampleInputSpeciality" name="speciality" value={form.speciality} onChange={handleChange} />
-                    {errors.speciality && <div className="error">{errors.speciality}</div>}
+                  <label htmlFor="exampleInputSpecialty" className="form-label d-block">Specialty*</label>
+                    <input placeholder='Enter your Specialty' style={{ textTransform: 'capitalize' }} type="text" className={`form-control ${form.specialty && !errors.specialty ? 'is-valid' : ''} ${errors.specialty ? 'is-invalid' : ''}`} id="exampleInputSpecialty" name="specialty" value={form.specialty} onChange={handleChange} />
+
                   </div>
                   <div className="input-control">
                     <label htmlFor="exampleInputMdYear" className="form-label d-block">MD Year*</label>
-                    <input placeholder='Enter your MD Year' type="number" className={`form-control ${form.mdYear && !errors.mdYear ? 'is-valid' : ''} ${errors.mdYear ? 'is-invalid' : ''}`} id="exampleInputMdYear" name="mdYear" value={form.mdYear} onChange={handleChange} />
-                    {errors.mdYear && <div className="error">{errors.mdYear}</div>}
+                    <input placeholder='Enter your MD Year' type="number"
+                      className={`form-control ${form.md && !errors.md ? 'is-valid' : ''} ${errors.md ? 'is-invalid' : ''}`}
+                      id="exampleInputMdYear" name="md" value={form.md} onChange={handleChange} />
+                    {errors.md && <div className="error">{errors.md}</div>}
                   </div>
                   <div className="input-control">
                     <label htmlFor="exampleInputConsultPrice" className="form-label d-block">Consultation Price*</label>
                     <input placeholder='Enter your Consultation Price' type="number" className={`form-control ${form.consultPrice && !errors.consultPrice ? 'is-valid' : ''} ${errors.consultPrice ? 'is-invalid' : ''}`} id="exampleInputConsultPrice" name="consultPrice" value={form.consultPrice} onChange={handleChange} />
                     {errors.consultPrice && <div className="error">{errors.consultPrice}</div>}
+                  </div>
+                  <div className="input-control">
+                    <label htmlFor="exampleInputHouseNumber" className="form-label d-block">House Number*</label>
+                    <input placeholder='Enter your House Number'
+                      type="number"
+                      className={`form-control ${form.hn && !errors.hn ? 'is-valid' : ''} 
+                    ${errors.hn ? 'is-invalid' : ''}`} id="exampleInputHouseNumber"
+                      name="hn"
+                      value={form.hn}
+                      onChange={handleChange} />
+                    {errors.hn && <div className="error">{errors.hn}</div>}
+                  </div>
+                  <div className="input-control">
+                    <label htmlFor="exampleInputBarangay" className="form-label d-block">Barangay*</label>
+                    <input placeholder='Enter your Barangay' style={{ textTransform: 'capitalize' }}
+                      type="text" className={`form-control ${form.barangay && !errors.barangay ? 'is-valid' : ''} 
+                    ${errors.barangay ? 'is-invalid' : ''}`} id="exampleInputBarangay" name="barangay"
+                      value={form.barangay} onChange={handleChange} />
+                    {errors.barangay && <div className="error">{errors.barangay}</div>}
+                  </div>
+                  <div className="input-control">
+                    <label htmlFor="exampleInputMunicipality" className="form-label d-block">Municipality*</label>
+                    <input placeholder='Enter your Municipality' style={{ textTransform: 'capitalize' }} type="text" className={`form-control ${form.municipality && !errors.municipality ? 'is-valid' : ''} ${errors.municipality ? 'is-invalid' : ''}`} id="exampleInputMunicipality" name="municipality" value={form.municipality} onChange={handleChange} />
+                    {errors.municipality && <div className="error">{errors.municipality}</div>}
+                  </div>
+                  <div className="input-control">
+                    <label htmlFor="exampleInputProvince" className="form-label d-block">Province*</label>
+                    <input placeholder='Enter your Province' style={{ textTransform: 'capitalize' }} type="text" className={`form-control ${form.province && !errors.province ? 'is-valid' : ''} ${errors.province ? 'is-invalid' : ''}`} id="exampleInputProvince" name="province" value={form.province} onChange={handleChange} />
+                    {errors.province && <div className="error">{errors.province}</div>}
                   </div>
                   <div className="input-control">
                     <label htmlFor="exampleInputEmail" className="form-label d-block">Email address*</label>
@@ -223,19 +286,14 @@ const DoctorSignup = () => {
                   </div>
                   <div className="input-control">
                     <label htmlFor="exampleInputConfirmPassword" className="form-label d-block">Confirm Password*</label>
-                    <input placeholder='Enter your Confirm Password' autoComplete='new-password' type="password" className={`form-control ${form.confirmPassword && !errors.confirmPassword ? 'is-valid' : ''} ${errors.confirmPassword ? 'is-invalid' : ''}`} id="exampleInputConfirmPassword" name="confirmPassword" value={form.confirmPassword} onChange={handleChange} />
-                    {errors.confirmPassword && <div className="error">{errors.confirmPassword}</div>}
-                  </div>
-                  <div className="input-control">
-                    <label htmlFor="exampleInputConfirmPassword" className="form-label d-block">Confirm Password*</label>
                     <input placeholder='Enter your Confirm Password' autoComplete='new-password' type="password"
                       className={`form-control ${form.confirmPassword && !errors.confirmPassword ? 'is-valid' : ''} ${errors.confirmPassword ? 'is-invalid' : ''}`}
                       id="exampleInputConfirmPassword" name="confirmPassword" value={form.confirmPassword} onChange={handleChange} />
                   </div>
                   <div className="checkboxes">
-                    <input type="checkbox" id="f2f" checked={form.f2f} onChange={handleChange} name="f2f" />
+                    <input type="checkbox" id="f2f" checked={form.f2f} onChange={handleChange} />
                     <label htmlFor="f2f">Face to Face Consultation</label>
-                    <input type="checkbox" id="online" checked={form.online} onChange={handleChange} name="online" />
+                    <input type="checkbox" id="online" checked={form.online} name="online" onChange={handleChange} />
                     <label htmlFor="f2f">Online Consultation</label>
                   </div>
                   <div className="input-control">

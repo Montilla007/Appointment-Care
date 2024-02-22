@@ -14,7 +14,7 @@ const Patientsignup = () => {
         confirmPassword: "",
         gender: "",
         role: "Patient",
-        consultation: "",
+        consultation: " ",
         imageData: null,
     });
 
@@ -111,16 +111,16 @@ const Patientsignup = () => {
         } else {
             newErrors.gender = '';
         }
-        const formData = new FormData();
-        formData.append('Fname', form.Fname);
-        formData.append('Lname', form.Lname);
-        formData.append('age', form.age);
-        formData.append('number', form.number);
-        formData.append('email', form.email);
-        formData.append('password', form.password);
-        formData.append('confirmPassword', form.confirmPassword);
-        formData.append('gender', form.gender);
-        formData.append('imageData', form.imageData);
+        // const formData = new FormData();
+        // formData.append('Fname', form.Fname);
+        // formData.append('Lname', form.Lname);
+        // formData.append('age', form.age);
+        // formData.append('number', form.number);
+        // formData.append('email', form.email);
+        // formData.append('password', form.password);
+        // formData.append('confirmPassword', form.confirmPassword);
+        // formData.append('gender', form.gender);
+        // formData.append('imageData', form.imageData);
 
         setErrors(newErrors);
 
@@ -162,12 +162,12 @@ const Patientsignup = () => {
                                     <h4>Please complete the following details to proceed</h4>
                                     <div className="input-control">
                                         <label htmlFor="exampleInputFname" className="form-label d-block">First Name*</label>
-                                        <input placeholder='Enter your First Name' type="text" className={`form-control ${form.Fname && !errors.Fname ? 'is-valid' : ''} ${errors.Fname ? 'is-invalid' : ''}`} id="exampleInputFname" name="Fname" value={form.Fname} onChange={handleChange} />
+                                        <input placeholder='Enter your First Name' style={{ textTransform: 'capitalize' }} type="text" className={`form-control ${form.Fname && !errors.Fname ? 'is-valid' : ''} ${errors.Fname ? 'is-invalid' : ''}`} id="exampleInputFname" name="Fname" value={form.Fname} onChange={handleChange} />
                                         {errors.Fname && <div className="error">{errors.Fname}</div>}
                                     </div>
                                     <div className="input-control">
                                         <label htmlFor="exampleInputLname" className="form-label d-block">Last Name*</label>
-                                        <input placeholder='Enter your Last Name' type="text" className={`form-control ${form.Lname && !errors.Lname ? 'is-valid' : ''} ${errors.Lname ? 'is-invalid' : ''}`} id="exampleInputLname" name="Lname" value={form.Lname} onChange={handleChange} />
+                                        <input placeholder='Enter your Last Name' style={{ textTransform: 'capitalize' }} type="text" className={`form-control ${form.Lname && !errors.Lname ? 'is-valid' : ''} ${errors.Lname ? 'is-invalid' : ''}`} id="exampleInputLname" name="Lname" value={form.Lname} onChange={handleChange} />
                                         {errors.Lname && <div className="error">{errors.Lname}</div>}
                                     </div>
                                     <div className="input-control">

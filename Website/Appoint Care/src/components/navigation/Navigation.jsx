@@ -12,6 +12,8 @@ const Navigation = ({ userData }) => {
             setStoredUserData(JSON.parse(storedUserData));
         }
     }, []);
+
+    console.log(userData)
     return (
         <section className="navigation position-relative mb-0 mt-1">
             <nav id="mainNavbar" className="navbar navbar-dark navbar-expand-md">
@@ -27,23 +29,29 @@ const Navigation = ({ userData }) => {
                             <li className="nav-item"><NavLink to="/Service" className="nav-new">Service</NavLink></li>
                             <li className="nav-item"><NavLink to="/TopDoctors" className="nav-new">Find Doctor</NavLink></li>
                             <li className="nav-item"><NavLink to="/Contact" className="nav-new">Contact Us</NavLink></li>
-                            {userData && <li className="nav-item"><NavLink to="/PatientInformation" className="nav-new">User Info</NavLink></li>}
                         </ul>
                     </div>
 
                     <div className='collapse navbar-collapse justify-content-end'>
                         {storedUserData ? (
-                            <div className='userData-Name'>
-                                {storedUserData.Fname} {storedUserData.Lname}
-                                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-                                    alt="patient-image" />
-                            </div>
+                            <NavLink to="/ProfileLayout">
+                                <div className='userData-Name'>
+                                    {storedUserData.Fname} {storedUserData.Lname}
+                                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                        alt="patient-image" />
+                                </div>
+                            </NavLink>
                         ) : userData && userData.response.user ? (
-                            <div className='userData-Name'>
-                                {userData.response.user.Fname} {userData.response.user.Lname}
-                                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-                                    alt="patient-image" />
-                            </div>
+                            <NavLink to="/ProfileLayout">
+
+                                <div className='userData-Name'>
+
+                                    {userData.Fname} {userData.Lname}
+                                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                        alt="patient-image" />
+                                </div>
+                            </NavLink>
+
                         ) : (
                             <div id="login">
                                 <NavLink to="/Signup" className="linker">Sign Up</NavLink>

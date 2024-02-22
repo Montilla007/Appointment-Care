@@ -1,0 +1,23 @@
+.profile-nav{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.profile-li{
+    padding-bottom: 30px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.logout-button{
+    width: 50%;
+}
+.profile-li i{
+    padding-right: 10px;
+    font-size: 20px;
+}
+.profile-nav:hover{
+    color: #007E85;
+}
+.profile-nav:focus{
+    color: #007E85;
+    font-weight: 700;
+}

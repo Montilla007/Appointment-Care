@@ -6,10 +6,21 @@
     border-radius: 10px;
     margin-bottom: 20px;
     flex-wrap: wrap;
+
+}
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.other-details{
+    margin-right: 200px;
 }
 .first-half{
     display: flex;
     align-items: center;
+    flex-grow: 1; /* Take up available space */
+
 }
 .second-half {
     width: 100%; 

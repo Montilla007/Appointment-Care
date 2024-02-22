@@ -1,5 +1,6 @@
 .patientinformation{
-    margin: 100px 0px;
+   margin-top: 50px;
+   margin-bottom: 150px;
 }
 .patient-page {
     margin-top: 40px;
@@ -32,9 +33,7 @@
 }
 .general-info{
     border-right: 1px solid #dee2e6;
-}
-.general-info h5{
-    margin-bottom: 20px;
+
 }
 .change-profile{
     object-position: top;
@@ -60,3 +59,4 @@
     border: 1px solid #007E85;
     background-color: transparent;
 }
+

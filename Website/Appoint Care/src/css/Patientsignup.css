@@ -58,11 +58,11 @@
 #MaleLabel,#FemaleLabel,#PatientLabel,#DoctorLabel{
     font-size: 20px;
 }
-.custom-file{
+/* .custom-file{
     border: 2px solid yellow;
     width: 100%;
 
-}
+} */
 .upload label{
     text-align: left;
     width: 500px;
@@ -83,14 +83,14 @@
     width: 500px;
 }
 .checkboxes{
-    margin-top: 15px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     white-space: nowrap;
 }
 .checkboxes input{
-    width: 50px;
-    height: 20px;
+    width: 55px;
+    height: 25px;
 }
 .checkboxes label{
     font-size: 16px;
