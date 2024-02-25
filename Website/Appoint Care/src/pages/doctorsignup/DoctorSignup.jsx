@@ -80,6 +80,9 @@ const DoctorSignup = () => {
     if (!form.age) {
       newErrors.age = 'Age is required';
       isValid = false;
+    } else if (form.age < 0) {
+      newErrors.age = 'Age cannot be negative';
+      isValid = false;
     } else {
       newErrors.age = '';
     }
@@ -87,9 +90,13 @@ const DoctorSignup = () => {
     if (!form.number) {
       newErrors.number = 'Phone Number is required';
       isValid = false;
+    } else if (form.number.length > 12) {
+      newErrors.number = 'Phone Number cannot exceed 12 digits';
+      isValid = false;
     } else {
       newErrors.number = '';
     }
+
 
     if (!form.email) {
       newErrors.email = 'Email is required';
@@ -103,6 +110,9 @@ const DoctorSignup = () => {
 
     if (!form.password) {
       newErrors.password = 'Password is required';
+      isValid = false;
+    } else if (form.password.length < 8) {
+      newErrors.password = 'Password must be 8 characters long';
       isValid = false;
     } else {
       newErrors.password = '';
@@ -229,9 +239,11 @@ const DoctorSignup = () => {
                     {errors.number && <div className="error">{errors.number}</div>}
                   </div>
                   <div className="input-control">
-                  <label htmlFor="exampleInputSpecialty" className="form-label d-block">Specialty*</label>
-                    <input placeholder='Enter your Specialty' style={{ textTransform: 'capitalize' }} type="text" className={`form-control ${form.specialty && !errors.specialty ? 'is-valid' : ''} ${errors.specialty ? 'is-invalid' : ''}`} id="exampleInputSpecialty" name="specialty" value={form.specialty} onChange={handleChange} />
-
+                    <label htmlFor="exampleInputSpecialty" className="form-label d-block">Specialty*</label>
+                    <input placeholder='Enter your Specialty'
+                      style={{ textTransform: 'capitalize' }} type="text"
+                      className={`form-control ${form.specialty && !errors.specialty ? 'is-valid' : ''} ${errors.specialty ? 'is-invalid' : ''}`} id="exampleInputSpecialty" name="specialty" value={form.specialty} onChange={handleChange} />
+                    {errors.specialty && <div className="error">{errors.specialty}</div>}
                   </div>
                   <div className="input-control">
                     <label htmlFor="exampleInputMdYear" className="form-label d-block">MD Year*</label>
@@ -289,6 +301,7 @@ const DoctorSignup = () => {
                     <input placeholder='Enter your Confirm Password' autoComplete='new-password' type="password"
                       className={`form-control ${form.confirmPassword && !errors.confirmPassword ? 'is-valid' : ''} ${errors.confirmPassword ? 'is-invalid' : ''}`}
                       id="exampleInputConfirmPassword" name="confirmPassword" value={form.confirmPassword} onChange={handleChange} />
+                    {errors.confirmPassword && <div className="error">{errors.confirmPassword}</div>}
                   </div>
                   <div className="checkboxes">
                     <input type="checkbox" id="f2f" checked={form.f2f} onChange={handleChange} />

@@ -57,7 +57,7 @@ const Service = () => {
         </div>
       </section>
       <ServiceProvider />
-      <section>
+      {/* <section>
         <div className='container flex-column justify-content-center align-items-center text-center mt-5 mb-5'>
           <div className="Top-Doctors">
             <h2>Top Doctors</h2>
@@ -172,7 +172,7 @@ const Service = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

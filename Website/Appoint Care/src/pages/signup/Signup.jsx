@@ -11,8 +11,8 @@ const Signup = () => {
           <WelcomeDesign />
           <hr />
           <div className='flex-column justify-content-center align-items-center'>
-            <NavLink to='/Signup/PatientSignup' className="registeras">Register as Patient </NavLink>
-            <NavLink to='/Signup/DoctorSignup' className="registeras">Register as Doctor</NavLink>
+            <NavLink to='/PatientSignup' className="registeras">Register as Patient </NavLink>
+            <NavLink to='/DoctorSignup' className="registeras">Register as Doctor</NavLink>
           </div>
         </div>
       </div>

@@ -2,9 +2,10 @@
     text-decoration: none;
     color: #6EAB36;
     border: 0;
-    padding: 5px 20px;
+    padding: 5px 30px;
+    font-size: 22px;
     margin-right: 10px;
-    font-size: 20px;
+
 }
 .linker:hover{
     background-color: #007E85;
@@ -23,7 +24,19 @@
     padding: 5px 30px;
     border-radius: 2rem;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
+    margin-right: 10px;
+
+}
+.nav-active2{
+    background-color: #007E85;
+    border-radius: 2rem;
+    color: white;
+    padding: 5px 30px;
+    text-decoration: none;
+    font-size: 22px;
+    margin-right: 10px;
+
 }
 .login:hover{
     background-color: #007E85;
@@ -58,16 +71,23 @@
     color: #6EAB36;
     padding: 5px 15px;
 }
+.nav-active{
+    background-color: #007E85;
+    border-radius: 2rem;
+    color: white;
+    padding: 5px 15px;
+    text-decoration: none;
+}
 .nav-new:hover{
     border-radius: 2rem;
     background-color: #007E85;
     color: white;
 }
-.login:focus, .linker:focus, .nav-new:focus{
+/* .login:focus, .linker:focus, .nav-new:focus{
     background-color: #007E85;
     border-radius: 2rem;
     color: white;
-}
+} */
 .userData-Name img{
     width: 55px;
     height: 50px;

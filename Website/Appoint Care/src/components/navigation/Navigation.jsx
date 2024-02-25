@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../css/Navigation.css';
+import logoImage from "../../../public/logo.png"
 
 const Navigation = ({ userData }) => {
     const [storedUserData, setStoredUserData] = useState(null);
@@ -12,23 +13,21 @@ const Navigation = ({ userData }) => {
             setStoredUserData(JSON.parse(storedUserData));
         }
     }, []);
-
-    console.log(userData)
     return (
         <section className="navigation position-relative mb-0 mt-1">
             <nav id="mainNavbar" className="navbar navbar-dark navbar-expand-md">
                 <div className="container-fluid mx-5">
-                    <a href="/" className='navbar-brand'><img src="/src/assets/images/logo.png" alt="logo" className='mx-2' /></a>
+                    <a href="/" className='navbar-brand'><img src={logoImage} alt="logo" className='mx-2' /></a>
                     <a href="/" className='navbar-brand'><h1 id="LogoTitle" className='d-md-block'>Appoint<span id="LogoSubTitle">Care</span></h1></a>
                     <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navLinks">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse justify-content-end" id="navLinks">
                         <ul className="navbar-nav">
-                            <li className="nav-item"><NavLink exact="true" to="/" className="nav-new">Home</NavLink></li>
-                            <li className="nav-item"><NavLink to="/Service" className="nav-new">Service</NavLink></li>
-                            <li className="nav-item"><NavLink to="/TopDoctors" className="nav-new">Find Doctor</NavLink></li>
-                            <li className="nav-item"><NavLink to="/Contact" className="nav-new">Contact Us</NavLink></li>
+                            <li className="nav-item"><NavLink exact="true" to="/" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Home</NavLink></li>
+                            <li className="nav-item"><NavLink to="/Service" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Service</NavLink></li>
+                            <li className="nav-item"><NavLink to="/TopDoctors" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Find Doctor</NavLink></li>
+                            <li className="nav-item"><NavLink to="/Contact" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Contact Us</NavLink></li>
                         </ul>
                     </div>
 
@@ -54,8 +53,8 @@ const Navigation = ({ userData }) => {
 
                         ) : (
                             <div id="login">
-                                <NavLink to="/Signup" className="linker">Sign Up</NavLink>
-                                <NavLink to="/Login" className="login">Login</NavLink>
+                                <NavLink to="Signup" className={({ isActive }) => isActive ? "nav-active2" : "linker"}>Sign Up</NavLink>
+                                <NavLink to="/Login" className={({ isActive }) => isActive ? "nav-active2" : "login"}>Login</NavLink>
                             </div>
                         )}
                     </div>

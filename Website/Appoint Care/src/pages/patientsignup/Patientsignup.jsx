@@ -29,8 +29,7 @@ const Patientsignup = () => {
         gender: '',
     });
     console.log(form)
-    const [emailExists, setEmailExists] = useState(false); // Define setEmailExists here
-
+    const [emailExists, setEmailExists] = useState(false);
     const handleChange = (event) => {
         const { name, value, type, files } = event.target;
 
@@ -66,12 +65,18 @@ const Patientsignup = () => {
         if (!form.age) {
             newErrors.age = 'Age is required';
             isValid = false;
+        } else if (form.age < 0) {
+            newErrors.age = 'Age cannot be negative';
+            isValid = false;
         } else {
             newErrors.age = '';
         }
 
         if (!form.number) {
             newErrors.number = 'Phone Number is required';
+            isValid = false;
+        } else if (form.number.length > 12) {
+            newErrors.number = 'Phone Number cannot exceed 12 digits';
             isValid = false;
         } else {
             newErrors.number = '';
@@ -89,6 +94,9 @@ const Patientsignup = () => {
 
         if (!form.password) {
             newErrors.password = 'Password is required';
+            isValid = false;
+        } else if (form.password.length < 8) {
+            newErrors.password = 'Password must be 8 characters long';
             isValid = false;
         } else {
             newErrors.password = '';

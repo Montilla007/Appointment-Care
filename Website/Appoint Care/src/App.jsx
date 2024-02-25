@@ -1,17 +1,13 @@
 //App JSx
-
 import React, { useState } from 'react'; // Import useState from React
-import Navigation from "./components/navigation/Navigation";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Contact from './pages/contact/Contact';
-import Footer from './components/footer/Footer';
 import Service from "./pages/service/Service";
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Patientsignup from "./pages/patientsignup/Patientsignup";
 import DoctorInformation from "./components/reusecomponent/DoctorInformation";
-import DoctorPage from "./pages/doctorpage/DoctorPage";
 import TopDoctors from './pages/topdoctors/TopDoctors';
 import DoctorProfile from "./pages/doctorprofile/DoctorProfile";
 import DefaultLayout from "./components/layouts/defaultlayout/DefaultLayout";
@@ -25,17 +21,33 @@ import PatientInformation from "./pages/profile/PatientInformation";
 import ProfileChangePassword from './pages/profile/ProfileChangePassword';
 import ProfilePrescription from './pages/profile/ProfilePrescription';
 import ProfileSchedule from './pages/profile/ProfileSchedule';
-
+import Overview from './pages/doctorprofile/Overview';
+import DoctorPageLayout from './components/layouts/doctorpagelayout/DoctorPageLayout';
+import DoctorHomePage from './pages/doctorpage/DoctorHomePage';
+import Signuplayout from './components/layouts/signuplayout/Signuplayout';
+import DoctorPatients from './pages/doctorpage/DoctorPatients'
+import DoctorAcceptReject from './pages/doctorpage/DoctorAcceptReject'
+import DoctorUserProfile from './pages/doctorpage/doctorprofilepage/DoctorUserProfile';
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminRegister from './pages/admin/AdminRegister';
+import DoctorProfileLayout from './components/layouts/doctorprofilelayout/DoctorProfileLayout'
 function App() {
   const [userData, setUserData] = useState(null);
-
-
+  const [adminData, setAdminData] = useState(null);
   React.useEffect(() => {
     const storedUserData = localStorage.getItem('userData');
     if (storedUserData) {
       setUserData(JSON.parse(storedUserData));
     }
   }, []);
+
+  React.useEffect(() => {
+    const storedUserData = localStorage.getItem('adminData');
+    if (storedUserData) {
+      setAdminData(JSON.parse(storedUserData));
+    }
+  }, []);
+  console.log(adminData)
 
   return (
     <>
@@ -45,27 +57,39 @@ function App() {
             <Route index element={<Home />} />
             <Route path='Service' element={<Service />} />
             <Route path='TopDoctors' element={<TopDoctors />} />
-            <Route path='Login' element={<Login setUserData={setUserData} />} />
-            <Route path='Signup/PatientSignup' element={<Patientsignup />} />
-            <Route path='Signup/DoctorSignup' element={<DoctorSignup />} />
-            <Route path='Contact' element={<Contact />} />
-            <Route path='DoctorProfile/:id' element={<DoctorProfile />} />
             <Route path='Signup' element={<Signup />} />
+            <Route path='Login' element={<Login setUserData={setUserData} />} />
+            {/* <Route path="SignUpLayout" element={<Signuplayout />}> */}
+            {/* </Route> */}
+            <Route path='Signup' element={<DoctorSignup />} />
+            <Route path='PatientSignup' element={<Patientsignup />} />
+            <Route path='DoctorSignup' element={<DoctorSignup />} />
+            <Route path='Contact' element={<Contact />} />
+            <Route path='DoctorProfile/:id' element={<DoctorProfile />} >
+              <Route index element={<Overview />} />
+            </Route>
             <Route path='DoctorInformation' element={<DoctorInformation />} />
             <Route path="ProfileLayout" element={<ProfileLayout />}>
               <Route index element={<PatientInformation userData={userData} />} />
               <Route path='ProfileChangePassword' element={<ProfileChangePassword userData={userData} />} />
               <Route path='ProfilePrescription' element={<ProfilePrescription userData={userData} />} />
-              <Route path='ProfileSchedule' element={<ProfileSchedule userData={userData} />} />
-
+              <Route path='ProfileSchedule' element={<ProfileSchedule userData={userData} />} >
+              </Route>
             </Route>
           </Route>
-          <Route path='/DoctorPage' element={<DoctorPage />} />
-          <Route path="/Admin" element={<AdminLayout />}>
+          <Route path='/DoctorPage' element={<DoctorPageLayout userData={userData} />} >
+            <Route index element={<DoctorHomePage />} />
+            <Route path='DoctorPatient' element={<DoctorPatients />} />
+            <Route path='DoctorAcceptReject' element={<DoctorAcceptReject />} />
+            <Route path='DoctorUserProfile' element={<DoctorProfileLayout />} />
+          </Route>
+          <Route path="/Admin" element={<AdminLayout adminData={adminData} />}>
             <Route index element={<Admin />}></Route>
             <Route path='PatientList' element={<PatientList />}></Route>
             <Route path='DoctorList' element={<DoctorList />}></Route>
           </Route>
+          <Route path='AdminLogin' element={<AdminLogin setAdminData={setAdminData} />} />
+          <Route path='AdminRegister' element={<AdminRegister />} />
         </Routes>
       </BrowserRouter >
     </>

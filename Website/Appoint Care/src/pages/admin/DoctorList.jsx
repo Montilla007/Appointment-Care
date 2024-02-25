@@ -52,18 +52,16 @@ const DoctorList = () => {
       <div className="p-4">
         <h2 className='applicants'>Doctor AppointCare Applicants</h2>
         <table className="p-4 text-center">
-          <thead className="theads">
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Doctor's Name</th>
-              <th scope="col">Phone Number</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Age</th>
-              <th scope="col">Email</th>
-              <th scope="col">Status</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
+          <tr>
+            <th className='th-color' scope="col">ID</th>
+            <th className='th-color' scope="col">Doctor's Name</th>
+            <th className='th-color' scope="col">Phone Number</th>
+            <th className='th-color' scope="col">Gender</th>
+            <th className='th-color' scope="col">Age</th>
+            <th className='th-color' scope="col">Email</th>
+            <th className='th-color' scope="col">Status</th>
+            <th className='th-color' scope="col">Actions</th>
+          </tr>
           <tbody>
             {displayDoctor}
           </tbody>

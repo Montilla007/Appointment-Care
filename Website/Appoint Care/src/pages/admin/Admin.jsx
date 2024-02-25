@@ -37,7 +37,7 @@ const Admin = () => {
     if (x.role === "Doctor" && x.status === "Pending") {
       return (
         <tr key={x._id}>
-          <th scope="row">{x._id}</th>
+          <td scope="row">{x._id}</td>
           <td>{x.Fname} {x.Lname}</td>
           <td>{x.number}</td>
           <td>{x.gender}</td>
@@ -58,7 +58,7 @@ const Admin = () => {
     if (x.role === "Doctor" && x.status === "Accepted") {
       return (
         <tr key={x._id}>
-          <th scope="row">{x._id}</th>
+          <td scope="row">{x._id}</td>
           <td>{x.Fname} {x.Lname}</td>
           <td>{x.number}</td>
           <td>{x.gender}</td>
@@ -79,7 +79,7 @@ const Admin = () => {
     if (x.role === "Doctor" && x.status === "Rejected") {
       return (
         <tr key={x._id}>
-          <th scope="row">{x._id}</th>
+          <td scope="row">{x._id}</td>
           <td>{x.Fname} {x.Lname}</td>
           <td>{x.number}</td>
           <td>{x.gender}</td>
@@ -102,56 +102,49 @@ const Admin = () => {
       <div className="p-4">
         <h2 className='applicants'>Doctor AppointCare Pending</h2>
         <table className="p-4 text-center">
-          <thead className="theads">
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Doctor's Name</th>
-              <th scope="col">Phone Number</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Age</th>
-              <th scope="col">Email</th>
-              <th scope="col">Status</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
           <tbody>
+            <tr>
+              <th className="th-color" scope="col">ID</th>
+              <th className="th-color" scope="col">Doctor's Name</th>
+              <th className="th-color" scope="col">Phone Number</th>
+              <th className="th-color" scope="col">Gender</th>
+              <th className="th-color" scope="col">Age</th>
+              <th className="th-color" scope="col">Email</th>
+              <th className="th-color" scope="col">Status</th>
+              <th className="th-color" scope="col">Actions</th>
+            </tr>
             {displayDoctorPending}
           </tbody>
         </table >
         <h2 className='applicants-2'>Doctor AppointCare Accepted</h2>
         <table className="p-4 text-center">
-          <thead className="theads">
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Doctor's Name</th>
-              <th scope="col">Phone Number</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Age</th>
-              <th scope="col">Email</th>
-              <th scope="col">Status</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
           <tbody>
+            <tr>
+              <th className="th-color" scope="col">ID</th>
+              <th className="th-color" scope="col">Doctor's Name</th>
+              <th className="th-color" scope="col">Phone Number</th>
+              <th className="th-color" scope="col">Gender</th>
+              <th className="th-color" scope="col">Age</th>
+              <th className="th-color" scope="col">Email</th>
+              <th className="th-color" scope="col">Status</th>
+              <th className="th-color" scope="col">Actions</th>
+            </tr>
             {displayDoctorAccepted}
           </tbody>
         </table >
         <h2 className='applicants-2'>Doctor AppointCare Rejected</h2>
         <table className="p-4 text-center ">
-          <thead className="theads">
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Doctor's Name</th>
-              <th scope="col">Phone Number</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Age</th>
-              <th scope="col">Email</th>
-              <th scope="col">Status</th>
-              <th scope="col">Actions</th>
-
-            </tr>
-          </thead>
           <tbody>
+            <tr>
+              <th className="th-color" scope="col">ID</th>
+              <th className="th-color" scope="col">Doctor's Name</th>
+              <th className="th-color" scope="col">Phone Number</th>
+              <th className="th-color" scope="col">Gender</th>
+              <th className="th-color" scope="col">Age</th>
+              <th className="th-color" scope="col">Email</th>
+              <th className="th-color" scope="col">Status</th>
+              <th className="th-color" scope="col">Actions</th>
+            </tr>
             {displayDoctorRejected}
           </tbody>
         </table >

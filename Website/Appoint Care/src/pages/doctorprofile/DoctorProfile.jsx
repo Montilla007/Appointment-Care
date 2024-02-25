@@ -1,15 +1,14 @@
 import React from 'react'
 import '../../css/DoctorProfile.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import { useParams } from "react-router-dom"
 import axios from 'axios';
-
+import Overview from './Overview';
 
 
 const DoctorProfile = () => {
     const [doctorInfo, setDoctorInfo] = React.useState([])
     const params = useParams();
-    console.log(params.id)
     React.useEffect(() => {
         const fetchData = async () => {
             try {
@@ -55,9 +54,11 @@ const DoctorProfile = () => {
                     <div className="container body-section">
                         <div className="row tab-section">
                             <div className="col-2">
-                                <button className="tabs"><i className="fa-regular fa-user"></i> Overview</button>
+                                <NavLink exact="true" to="" end className="tabs"><i className="fa-regular fa-user"></i> Overview</NavLink>
                             </div>
                             <div className="col-2">
+                                <NavLink to="" end className="tabs"><i className="fa-regular fa-user"></i> Overview</NavLink>
+
                                 <button className="tabs"><i className="fa-regular fa-calendar-days"></i> Schedule</button>
                             </div>
                             <div className="col-2">
@@ -69,25 +70,7 @@ const DoctorProfile = () => {
                 <div>
                     <div className="container overview-component">
                         <div className="overview-content px-3">
-                            <div className="row">
-                                <h3 className='professional'>Professional Info</h3>
-                                <p className='doctor-introduction lead '>Dr. <strong>{doctorInfo.Fname} {doctorInfo.Lname}</strong> is in the field of {doctorInfo.specialty}.</p>
-                                <br />
-                                <p className='doctor-paragraph lead mx-2'><strong className='margin-left-doctorName'>{doctorInfo.Fname} {doctorInfo.Lname}</strong>, a dedicated {doctorInfo.age}-year-old <strong>{doctorInfo.specialty}</strong>, offers specialized {doctorInfo.specialty} care to patients in need at <strong style={{ textTransform: "capitalize" }}>{doctorInfo.hn} {doctorInfo.barangay} {doctorInfo.municipality} {doctorInfo.province}</strong>. Patients
-                                    are encouraged to seek consultation with {doctorInfo.Fname} {doctorInfo.Lname} through convenient walk-in visits or by scheduling personalized appointments.
-                                    The consultation fee is set at  <strong>Php {doctorInfo.consultPrice}</strong>. To arrange an appointment, individuals can utilize the
-                                    provided contact information, including the clinic's phone number: <strong>{doctorInfo.number}</strong>. {doctorInfo.Fname} {doctorInfo.Lname} accommodates
-                                    <strong> face to face
-                                        consultations{doctorInfo.online ? " and virtual appointments" : ""}</strong>, ensuring accessibility and flexibility to meet patients' needs.
-                                    For inquiries or to schedule appointments, please don't hesitate to reach out via email at <strong>{doctorInfo.email}</strong>. {doctorInfo.Fname} {doctorInfo.Lname} remains steadfast
-                                    in delivering comprehensive {doctorInfo.specialty} expertise tailored to each patient, placing utmost importance on promoting health and wellness in every interaction.</p>
-                            </div>
-                        </div>
-                        <div className="schedule content px-3">
-
-                        </div>
-                        <div className="affiliations px-3">
-
+                            <Outlet />
                         </div>
                     </div>
                 </div>

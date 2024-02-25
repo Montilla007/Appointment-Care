@@ -11,6 +11,10 @@ li {
     list-style: none;
 }
 
+.wrapper {
+    display: flex;
+}
+
 #sidebar {
     width: 150px;
     min-width: 70px;
@@ -65,7 +69,15 @@ a.sidebar-link {
     white-space: nowrap;
     border-left: 3px solid transparent;
 }
-
+.doctor-link-active{
+    color: #FFF;
+    padding: .625rem 1.625rem;
+    display: block;
+    font-weight: 700;
+    font-size: 1.5rem;
+    background-color: rgba(34, 23, 23, 0.075);
+    border-left: 3px solid #3b7ddd;
+}
 .sidebar-link i {
     font-size: 1.5rem;
     margin-right: .75rem;
@@ -115,4 +127,14 @@ a.sidebar-link:hover {
 }
 #number-of-new-patients{
     font-size: 40px;
+}
+.denied {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    width: 100%; /* Adjust width as needed */
+    height: 100vh; /* Adjust height as needed */
 }

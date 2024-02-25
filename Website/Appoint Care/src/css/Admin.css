@@ -15,9 +15,10 @@ table{
     background-color: #007e85;
     width: 100px;
 }
-th{
+.th-color{
     /* padding-right: 50px;
     padding-left: 50px; */
+    background-color: #007e85;
     padding: 20px 50px;
     border: 1px solid black;
 }

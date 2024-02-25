@@ -14,7 +14,7 @@ const ServiceProvider = () => {
         <div className="row justify-content-center align-items-center provide">
           <div className="col-3">
             <div className="card-2-img" style={{ width: "25rem" }}>
-              <img src="/src/assets/images/diagnosis.png" className='card-img-top' alt="" />
+              <img src="diagnosis.png" className='card-img-top' alt="" />
               <div className="card-body1">
                 <h5 className="card-title">Diagnosis</h5>
                 <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -25,7 +25,7 @@ const ServiceProvider = () => {
           <div className="col-1"></div>
           <div className="col-3">
             <div className="card-2-img" style={{ width: "25rem" }}>
-              <img src="/src/assets/images/injury.png" className='card-img-top' alt="" />
+              <img src="injury.png" className='card-img-top' alt="" />
               <div className="card-body1">
                 <h5 className="card-title">Fractures and Injury</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -36,7 +36,7 @@ const ServiceProvider = () => {
           <div className="col-1"></div>
           <div className="col-3">
             <div className="card-2-img" style={{ width: "25rem" }}>
-              <img src="/src/assets/images/teeth.png" className='card-img-top' alt="" />
+              <img src="teeth.png" className='card-img-top' alt="" />
               <div className="card-body1">
                 <h5 className="card-title">Xray Checkup</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -47,7 +47,7 @@ const ServiceProvider = () => {
           <div className="col-1"></div>
           <div className="col-3">
             <div className="card-2-img" style={{ width: "25rem" }}>
-              <img src="/src/assets/images/special.png" className='card-img-top' alt="" />
+              <img src="special.png" className='card-img-top' alt="" />
               <div className="card-body1">
                 <h5 className="card-title">Specialist Consultations</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -58,7 +58,7 @@ const ServiceProvider = () => {
           <div className="col-1"></div>
           <div className="col-3">
             <div className="card-2-img" style={{ width: "25rem" }}>
-              <img src="/src/assets/images/treatment.png" className='card-img-top' alt="" />
+              <img src="treatment.png" className='card-img-top' alt="" />
               <div className="card-body1">
                 <h5 className="card-title">Eye Care</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -69,7 +69,7 @@ const ServiceProvider = () => {
           <div className="col-1"></div>
           <div className="col-3">
             <div className="card-2-img" style={{ width: "25rem" }}>
-              <img src="/src/assets/images/eyecare.png" className='card-img-top' alt="" />
+              <img src="eyecare.png" className='card-img-top' alt="" />
               <div className="card-body1">
                 <h5 className="card-title">Treatments</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
