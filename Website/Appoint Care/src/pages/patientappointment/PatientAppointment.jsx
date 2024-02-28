@@ -42,7 +42,7 @@ const PatientAppointment = ({ userData }) => {
             <section className='patient-booking'>
                 <div className="container">
                     <div className='text-center'>
-                        <img src="/public/patient-vector.png" alt="patient-vector" />
+                        <img src="/public/consultation-vector-3.png" alt="patient-vector" />
                         <h2>No Bookings</h2>
                         <p className='lead'>You have no bookings at the moment.</p>
                     </div>
@@ -73,6 +73,8 @@ const PatientAppointment = ({ userData }) => {
                                 <span><i className="fa-regular fa-envelope"></i> {doctorInfo ? doctorInfo.email : 'N/A'}</span>
                                 <br />
                                 <span><i className="fa-solid fa-phone"></i> {doctorInfo ? doctorInfo.number : 'N/A'}</span>
+                                <br />
+                                <span><i class="fa-solid fa-money-bill-transfer"></i>₱ {doctorInfo ? doctorInfo.consultPrice : 'N/A'}</span>
 
                             </div>
                         </div>
@@ -106,7 +108,7 @@ const PatientAppointment = ({ userData }) => {
                             alt="" />
                         <div className="details-container mx-4">
                             <div className="personal-details">
-                                <span>Name: {x.fullName} </span>
+                                <span className='doctor-name'> {x.fullName} </span>
                                 <br />
                                 <span><i className="fa-regular fa-envelope"></i> {x.email}</span>
                                 <br />
@@ -123,16 +125,16 @@ const PatientAppointment = ({ userData }) => {
                                 <br />
                                 <span>2. You will recieve a call to your Doctor and check your email containing about the appoinment. Please check your Spam mailbox as well</span>
                                 <br />
-                                <span>3. The Doctor will give your consultation after the Appoinment. You can check in your consultation</span>
+                                <span>3. The Doctor will give your consultation after the Appoinment. You can check in your consultation Page</span>
 
                             </div>
                         </div>
                     </div>
                 </div>
                 <button className='btn-appointment mt-4'>Cancel Booking</button>
-                {x.online ? <button className='btn-viewprofile mt-1'>View Details</button>
+                {/* {x.online ? <button className='btn-viewprofile mt-1'>Consult</button>
                     : <div></div>
-                }
+                } */}
             </div >
         );
     });

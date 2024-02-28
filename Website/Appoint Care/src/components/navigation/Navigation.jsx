@@ -24,10 +24,11 @@ const Navigation = ({ userData }) => {
                     <div className="collapse navbar-collapse justify-content-end" id="navLinks">
                         <ul className="navbar-nav">
                             <li className="nav-item"><NavLink exact="true" to="/" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Home</NavLink></li>
-                            <li className="nav-item"><NavLink to="/Service" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Service</NavLink></li>
+                            {/* <li className="nav-item"><NavLink to="/Service" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Service</NavLink></li> */}
                             <li className="nav-item"><NavLink to="/TopDoctors" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Find Doctor</NavLink></li>
-                            <li className="nav-item"><NavLink to="/Contact" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Contact Us</NavLink></li>
                             {storedUserData && <li className="nav-item"><NavLink to="PatienAppointment" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>My Bookings</NavLink></li>}
+                            {storedUserData && <li className="nav-item"><NavLink to="PatientConsultation" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Consultation</NavLink></li>}
+                            <li className="nav-item"><NavLink to="/Contact" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Contact Us</NavLink></li>
 
                         </ul>
                     </div>

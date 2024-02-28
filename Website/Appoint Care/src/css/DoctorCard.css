@@ -94,3 +94,16 @@
     font-weight: 500;
     color: #596e8a;
 }
+.btn-appointment-3{
+    color: white;
+    background-color: #007E85;
+    border: 1px solid #007E85;  
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: 400;
+    width: 100%;
+}
+.btn-appointment-3:hover{
+    background-color: #6EAB36;
+    border-color: #6EAB36;
+}

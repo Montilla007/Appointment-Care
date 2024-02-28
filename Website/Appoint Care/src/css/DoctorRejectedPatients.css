@@ -1,0 +1,59 @@
+.schedule-container-2{
+    display: flex;
+    align-items: start;
+    padding: 20px;
+    background-color: rgb(242, 203, 203);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    color: rgb(132, 85, 85);
+}
+.wew{
+    background-color: rgb(248, 91, 91);
+    border: 1px solid rgb(248, 91, 91);
+    border-radius: 5px;
+    padding: 5px 30px;
+    color: white;
+    font-weight: 400;
+}
+.wew:hover{
+    background-color: #007E85;
+    border-color: #007E85;
+}
+.status-2{
+    background-color: #f65e5e;
+    width: fit-content;
+    padding: 5px 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #f7f6f6;
+    margin-bottom: 20px;
+}
+.status-3{
+    background-color: #378e00;
+    width: fit-content;
+    padding: 5px 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #f7f6f6;
+    margin-bottom: 20px;
+}
+.speciality-2{
+    color: rgb(132, 85, 85);
+    font-size: 17px;
+}
+.btn-viewprofile-3{
+    color: rgb(132, 85, 85);
+    border: 1px solid #f65e5e;  
+    border-radius: 5px;
+    padding: 5px 30px;
+    font-weight: 400;
+    background-color: transparent;
+}
+.btn-viewprofile-3:hover{
+    border-color: red;
+    background-color: red;
+    color: white;
+}

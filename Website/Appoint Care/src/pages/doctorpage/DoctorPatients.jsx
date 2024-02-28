@@ -43,7 +43,7 @@ const DoctorPatients = ({ userData }) => {
       <section className='patient-booking'>
         <div className="container">
           <div className='text-center'>
-            <img src="/public/patient-vector.png" alt="patient-vector" />
+            <img src="/public/consultation-vector-2.png" alt="patient-vector" />
             <h2>No Bookings</h2>
             <p className='lead'>You have no Patients at the moment. Check Patient Appointment List</p>
           </div>
@@ -51,11 +51,26 @@ const DoctorPatients = ({ userData }) => {
       </section>
     );
   }
+  const acceptedBookings = patientInfo.schedules.filter(x => x.status === "Accepted");
+  if (acceptedBookings.length === 0) {
+    return (
+      <section className='patient-booking'>
+        <div className="container">
+          <div className='text-center'>
+            <img src="/public/consultation-vector-2.png" alt="patient-vector" />
+            <h2 className='mt-5'>No Accepted Bookings</h2>
+            <p className='lead'>You have no accepted Patients at the moment.</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   const patients = patientInfo.schedules.map((x, index) => {
     if (x.status === "Accepted") {
       return (
         <div key={index} className="bookings mb-5">
-          <h2 className='status'>Status: {x.status}</h2>
+          <h2 className='status-3'>Status: {x.status}</h2>
           <h3>Doctor Information</h3>
           <div className="row ">
             <div className="first-half ">
@@ -74,7 +89,8 @@ const DoctorPatients = ({ userData }) => {
                   <span><i className="fa-regular fa-envelope"></i> {doctorInfo ? doctorInfo.email : 'N/A'}</span>
                   <br />
                   <span><i className="fa-solid fa-phone"></i> {doctorInfo ? doctorInfo.number : 'N/A'}</span>
-
+                  <br />
+                  <span><i className="fa-solid fa-money-bill-transfer"></i>₱ {doctorInfo ? doctorInfo.consultPrice : 'N/A'}</span>
                 </div>
               </div>
             </div>
@@ -82,32 +98,32 @@ const DoctorPatients = ({ userData }) => {
             <div className="first-half">
               <div className="details-container">
                 <div className="personal-details">
-                  {x.online ? <span><i class="fa-solid fa-video">
+                  {x.online ? <span><i className="fa-solid fa-video">
                   </i><span className='important-bold'>Online Consultation</span></span>
                     : <span>
-                      <i class="fa-solid fa-person-running"></i>
+                      <i className="fa-solid fa-person-running"></i>
                       <span className='important-bold'>Face to Face Consultation</span></span>}
                   <br />
-                  <span><i class="fa-regular fa-calendar"></i><span className='important-bold'>{x.date}</span></span>
+                  <span><i className="fa-regular fa-calendar"></i><span className='important-bold'>{x.date}</span></span>
                   <br />
-                  <span><i class="fa-solid fa-clock"></i><span className='important-bold'>{x.time} (24 Hours Format)</span></span>
+                  <span><i className="fa-solid fa-clock"></i><span className='important-bold'>{x.time} (24 Hours Format)</span></span>
                 </div>
                 <div className="other-details">
                   {x.online ? <div></div>
-                    : <div><span className='text-capitalize'><i class="fa-regular fa-building"></i> <span className='important-bold'> {doctorInfo ? doctorInfo.hn : 'N/A'} {doctorInfo ? doctorInfo.barangay : 'N/A'}</span></span>
+                    : <div><span className='text-capitalize'><i className="fa-regular fa-building"></i> <span className='important-bold'> {doctorInfo ? doctorInfo.hn : 'N/A'} {doctorInfo ? doctorInfo.barangay : 'N/A'}</span></span>
                       <br />
-                      <span className='text-capitalize'><i class="fa-solid fa-location-dot"></i><span className='text-capitalize important-bold'>{doctorInfo ? doctorInfo.municipality : 'N/A'} {doctorInfo ? doctorInfo.province : 'N/A'}</span></span>
+                      <span className='text-capitalize'><i className="fa-solid fa-location-dot"></i><span className='text-capitalize important-bold'>{doctorInfo ? doctorInfo.municipality : 'N/A'} {doctorInfo ? doctorInfo.province : 'N/A'}</span></span>
                       <br /></div>}
                 </div>
               </div>
             </div>
-            <h3 className='mt-5'>Personal Info</h3>
+            <h3 className='mt-5'>PATIENT Info</h3>
             <div className="first-half">
               <img src="/public/me.png"
                 alt="" />
               <div className="details-container mx-4">
                 <div className="personal-details">
-                  <span>Name: {x.fullName} </span>
+                  <span className='doctor-name'>{x.fullName} </span>
                   <br />
                   <span><i className="fa-regular fa-envelope"></i> {x.email}</span>
                   <br />
@@ -117,10 +133,7 @@ const DoctorPatients = ({ userData }) => {
               </div>
             </div>
           </div>
-          <button className='btn-appointment mt-5'>Dismiss</button>
-          {x.online ? <button className='btn-viewprofile mt-1'>View Details</button>
-            : <div></div>
-          }
+          <NavLink to={`Consult/${x.patientId}`}><button className='btn-appointment-3 mt-5 mb-3'>Consult a Prescription</button></NavLink>
         </div >
       );
     }

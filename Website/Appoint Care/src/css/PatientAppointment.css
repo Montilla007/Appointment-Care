@@ -57,3 +57,10 @@
 .details-container-2{
     padding: 10px 15px;
 }
+.header-h3{
+    color: #6C7E98;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}

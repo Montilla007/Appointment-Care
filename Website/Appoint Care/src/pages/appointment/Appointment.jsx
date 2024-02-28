@@ -94,7 +94,7 @@ const Appointment = ({ userData }) => {
                         <img src="https://d1c0x5rkl7k63i.cloudfront.net/upload/doctor/avatar/kRtqlvEO4x94ddXJCeeGpoAvIJszZz07YTP1ffhoLVQPR9Uzac.png" alt="doctor-picture" />
                         <br />
                         <h2 className='doctor-name-2 text-capitalize'>{doctorInfo.Fname} {doctorInfo.Lname}</h2>
-                        <span className='speciality-2 text-capitalize'>{doctorInfo.specialty}</span>
+                        <span className='speciality text-capitalize'>{doctorInfo.specialty}</span>
                         <br />
                         <span className='md-doctor-2'>MD since {doctorInfo.md}</span>
                     </div>

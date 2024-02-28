@@ -33,6 +33,9 @@ import AdminRegister from './pages/admin/AdminRegister';
 import DoctorProfileLayout from './components/layouts/doctorprofilelayout/DoctorProfileLayout'
 import Appointment from './pages/appointment/Appointment';
 import PatientAppointment from './pages/patientappointment/PatientAppointment';
+import DoctorRejectedPatients from "./pages/doctorpage/DoctorRejectedPatients"
+import Consult from './pages/doctorpage/Consult';
+import PatientConsultation from './pages/patientappointment/PatientConsultation';
 function App() {
   const [userData, setUserData] = useState(null);
   const [adminData, setAdminData] = useState(null);
@@ -60,6 +63,7 @@ function App() {
             <Route path='TopDoctors' element={<TopDoctors />} />
             <Route path='Signup' element={<Signup />} />
             <Route path='PatienAppointment' element={<PatientAppointment userData={userData} />} />
+            <Route path='PatientConsultation' element={<PatientConsultation userData={userData} />} />
             <Route path='Login' element={<Login setUserData={setUserData} />} />
             <Route path='/Appointment/:id' element={<Appointment userData={userData} />} />
             {/* <Route path="SignUpLayout" element={<Signuplayout />}> */}
@@ -83,7 +87,9 @@ function App() {
           <Route path='/DoctorPage' element={<DoctorPageLayout userData={userData} />} >
             <Route index element={<DoctorHomePage userData={userData} />} />
             <Route path='DoctorPatient' element={<DoctorPatients userData={userData} />} />
+            <Route path='DoctorRejectedPatients' element={<DoctorRejectedPatients userData={userData} />} />
             <Route path='DoctorAcceptReject' element={<DoctorAcceptReject userData={userData} />} />
+            <Route path='DoctorPatient/Consult/:id' element={<Consult />} />
             <Route path='DoctorUserProfile' element={<DoctorProfileLayout />} >
               <Route index element={<DoctorUserProfile userData={userData} />} />
             </Route>
