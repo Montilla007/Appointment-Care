@@ -15,11 +15,12 @@
 }
 .other-details{
     margin-right: 200px;
+    white-space: nowrap;
 }
 .first-half{
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Take up available space */
+    flex-grow: 1;
 
 }
 .second-half {
@@ -54,6 +55,7 @@
 }
 .svg-row{
     display: flex;
+    align-items: center;
 }
 .btn-viewprofile{
     color: #007E85;
@@ -79,4 +81,16 @@
 .btn-appointment:hover{
     background-color: #6EAB36;
     border-color: #6EAB36;
+}
+.speciality{
+    color: #007E85;
+    font-size: 17px;
+}
+.doctor-name{
+    font-weight: 700;
+}
+.md-doctor{
+    font-size: 15px;
+    font-weight: 500;
+    color: #596e8a;
 }

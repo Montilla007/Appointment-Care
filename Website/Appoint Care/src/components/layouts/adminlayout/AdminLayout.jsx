@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom';
 import "../../../css/AdminLayout.css"
-import logoImage from "../../../public/logo.png"
+import logoImage from "/logo.png"
 
 
 const AdminLayout = ({ adminData }) => {

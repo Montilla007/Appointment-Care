@@ -31,6 +31,8 @@ import DoctorUserProfile from './pages/doctorpage/doctorprofilepage/DoctorUserPr
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminRegister from './pages/admin/AdminRegister';
 import DoctorProfileLayout from './components/layouts/doctorprofilelayout/DoctorProfileLayout'
+import Appointment from './pages/appointment/Appointment';
+import PatientAppointment from './pages/patientappointment/PatientAppointment';
 function App() {
   const [userData, setUserData] = useState(null);
   const [adminData, setAdminData] = useState(null);
@@ -47,7 +49,6 @@ function App() {
       setAdminData(JSON.parse(storedUserData));
     }
   }, []);
-  console.log(adminData)
 
   return (
     <>
@@ -58,7 +59,9 @@ function App() {
             <Route path='Service' element={<Service />} />
             <Route path='TopDoctors' element={<TopDoctors />} />
             <Route path='Signup' element={<Signup />} />
+            <Route path='PatienAppointment' element={<PatientAppointment userData={userData} />} />
             <Route path='Login' element={<Login setUserData={setUserData} />} />
+            <Route path='/Appointment/:id' element={<Appointment userData={userData} />} />
             {/* <Route path="SignUpLayout" element={<Signuplayout />}> */}
             {/* </Route> */}
             <Route path='Signup' element={<DoctorSignup />} />
@@ -78,10 +81,12 @@ function App() {
             </Route>
           </Route>
           <Route path='/DoctorPage' element={<DoctorPageLayout userData={userData} />} >
-            <Route index element={<DoctorHomePage />} />
-            <Route path='DoctorPatient' element={<DoctorPatients />} />
-            <Route path='DoctorAcceptReject' element={<DoctorAcceptReject />} />
-            <Route path='DoctorUserProfile' element={<DoctorProfileLayout />} />
+            <Route index element={<DoctorHomePage userData={userData} />} />
+            <Route path='DoctorPatient' element={<DoctorPatients userData={userData} />} />
+            <Route path='DoctorAcceptReject' element={<DoctorAcceptReject userData={userData} />} />
+            <Route path='DoctorUserProfile' element={<DoctorProfileLayout />} >
+              <Route index element={<DoctorUserProfile userData={userData} />} />
+            </Route>
           </Route>
           <Route path="/Admin" element={<AdminLayout adminData={adminData} />}>
             <Route index element={<Admin />}></Route>

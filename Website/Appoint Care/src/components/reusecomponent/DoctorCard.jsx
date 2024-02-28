@@ -48,10 +48,10 @@ const DoctorCard = () => {
                             </div>
                             <div className="details-container">
                                 <div className="personal-details">
-                                    <h2 className='text text-capitalize'>{x.Fname} {x.Lname}</h2>
+                                    <h2 className='doctor-name text-capitalize'>{x.Fname} {x.Lname}</h2>
                                     <span className='speciality text-capitalize'>{x.specialty}</span>
                                     <br />
-                                    <span>MD since {x.md}</span>
+                                    <span className='md-doctor'>MD since {x.md}</span>
                                 </div>
                                 <div className="other-details">
                                     <div className="svg-component">
@@ -97,7 +97,7 @@ const DoctorCard = () => {
                                 </div>
                                 <div className='button-request'>
                                     <NavLink to={`/DoctorProfile/${x._id}`} onClick={handleViewProfile}><button className='btn-viewprofile'>View Profile</button></NavLink>
-                                    <button className='btn-appointment mx-2'>Request an Appointment</button>
+                                    <NavLink to={`/Appointment/${x._id}`} onClick={handleViewProfile}><button className='btn-appointment mx-2'>Request an Appointment</button></NavLink>
                                 </div>
                             </div>
                         </div>

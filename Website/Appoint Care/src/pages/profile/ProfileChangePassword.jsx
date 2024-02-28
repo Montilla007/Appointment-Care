@@ -3,8 +3,9 @@ import axios from 'axios';
 import "../../css/ProfileChangePassword.css"
 
 const ProfileChangePassword = () => {
-    const [storedUserData, setStoredUserData] = useState(null);
     const [editedName, setEditedName] = useState('');
+
+    const [storedUserData, setStoredUserData] = useState(null);
     useEffect(() => {
         const storedUserData = localStorage.getItem('userData');
         if (storedUserData) {

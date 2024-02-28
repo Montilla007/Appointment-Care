@@ -1,9 +1,9 @@
 import React from 'react'
 import '../../css/WelcomeDesign.css'
-import schedule from '../../../public/schedule.png'
-import consult from '../../../public/consult.png'
-import takeyourmedicine from '../../../public/takeyourmedicine.png'
-import logoImage from "../../../public/logo.png"
+import schedule from '/public/schedule.png'
+import consult from '/public/consult.png'
+import takeyourmedicine from '/takeyourmedicine.png'
+import logoImage from "/logo.png"
 
 const WelcomeDesign = (props) => {
   return (

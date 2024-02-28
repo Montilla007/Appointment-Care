@@ -1,6 +1,6 @@
 .service{
     position: relative;
-    height: 75vh;
+    height: 80vh;
 }
 .service::before {
     background-image: url("https://scontent.fbag1-2.fna.fbcdn.net/v/t1.15752-9/427850613_1064269781502591_4276733152467030698_n.png?_nc_cat=100&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeEMRbaUc8kyuG7vRrSfqVYjsQWtifQ2Oy2xBa2J9DY7LXGT-J9OQlXgTxyDnxY4bOAKpZfpDgfnEPftadY--p-4&_nc_ohc=bbRFbTLU_7gAX-aPmSI&_nc_ht=scontent.fbag1-2.fna&oh=03_AdQa2j3mOVC_7qe2YKdCj8BDShZ5_Q3g9O8VZ_jmwTy0Ew&oe=65F57B77");
@@ -51,18 +51,18 @@
     position: relative;
     margin-top: 30px;
     width: 328px;
-    height: 610px;
+    height: 650px;
     padding: 30px;
     border-radius: 15px;
+    text-align: left;
 }
 .form-appointment h2{
     font-weight: 700;
     font-size: 24px;
     margin-bottom: 20px;
 }
-.form-appointment label{
+.form-appointment form label{
     font-weight: 500;
-    text-align: left;
     padding: 10px 0;
 }
 .form-appointment input{
@@ -84,6 +84,7 @@
 }
 .form-appointment button{
     background-color: #007E85;
+    width: 100%;
     border-radius: 5px;
     border: 0;
     height: 52px;

@@ -3,8 +3,32 @@ import FindDoctor from '../../components/reusecomponent/FindDoctor';
 import ServiceProvider from '../../components/reusecomponent/ServiceProvider'
 import '../../css/Service.css';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 const Service = () => {
+  const [info, setInfo] = React.useState()
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://appointment-care-api.vercel.app/api/v1/person/users');
+        setInfo(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleViewProfile = (id) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      // If token exists, user is authenticated, proceed to view profile
+    } else {
+      window.location.href = "/login";
+    }
+  };
+
   return (
     <div>
       <section className='service'>
@@ -32,24 +56,35 @@ const Service = () => {
               <div className="col-1"></div>
               <div className="col-5">
                 <div className='form-appointment'>
-                  <h2>Book Appointment</h2>
-                  <label htmlFor="fullName">Full Name *</label>
-                  <input type="text" placeholder='Full Name' id="fullName" />
-                  <label htmlFor="email">Email address *</label>
-                  <input type="email" placeholder='Email address' id="email" />
-                  <label htmlFor="location">Location *</label>
-                  <select id="location">
-                    <option value="">Select Location</option>
-                    <option value="SanFabian">San Fabian</option>
-                    <option value="Dagupan">Dagupan</option>
-                    <option value="Calasiao">Calasiao</option>
-                    <option value="SanCarlos">San Carlos</option>
-                  </select>
-                  <label htmlFor="time">Time *</label>
-                  <select id="time">
-                    <option value="">Select Time</option>
-                  </select>
-                  <button>Book Appointment</button>
+                  <h2 className='text-center'>Book Appointment</h2>
+                  <form action="">
+                    <div>
+                      <label htmlFor="exampleInputFullName">Full Name*</label>
+                      <br />
+                      <input type="email" className="form-control" id="exampleInputFullName" aria-describedby="emailHelp" placeholder="Enter Full Name" />
+                    </div>
+                    <div>
+                      <label htmlFor="exampleInputEmail1">Email*</label>
+                      <br />
+                      <input type="email" className="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email" />
+                    </div>
+                    <div>
+                      <label htmlFor="exampleInputPhoneNumber">Phone Number*</label>
+                      <br />
+                      <input type="tel" className="form-control" id="exampleInputPhoneNumber" placeholder="Enter phone number" />
+                    </div>
+                    <div>
+                      <label htmlFor="exampleInputDate">Date*</label>
+                      <br />
+                      <input type="date" className="form-control" id="exampleInputDate" />
+                    </div>
+                    <div>
+                      <label htmlFor="exampleInputTime">Time*</label>
+                      <br />
+                      <input type="time" className="form-control" id="exampleInputTime" />
+                    </div>
+                    <NavLink onClick={handleViewProfile} ><button type="submit" className='my-3'>Book Appointment</button></NavLink>
+                  </form>
                 </div>
               </div>
             </div>

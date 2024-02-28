@@ -49,13 +49,13 @@
 .submit-signup:active{
     background-color: #6EAB36;
 }
-#Patient,#Doctor, #female,#male{
+#Patient,#Doctor, #female,#male, #online, #f2f{
     width: 20px;
     height: 20px;
     margin-right: 10px;
     padding: 0;
 }
-#MaleLabel,#FemaleLabel,#PatientLabel,#DoctorLabel{
+#MaleLabel,#FemaleLabel,#PatientLabel,#DoctorLabel, #online, #f2f{
     font-size: 20px;
 }
 /* .custom-file{

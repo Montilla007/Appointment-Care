@@ -1,0 +1,59 @@
+.patient-booking{
+    margin: 50px 0px;
+}
+.bookings{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #FAFAFA;
+
+    border-radius: 15px;
+}
+.booking-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.bookings img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+.bookings h3{
+    color: #6C7E98;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.important-bold{
+    font-weight: 600;
+}
+.status{
+    background-color: #FFFBE6;
+    width: fit-content;
+    padding: 5px 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #BC5518;
+    margin-bottom: 20px;
+}
+.bookings i {
+    margin-right: 10px;
+}
+.other-details-2{
+    white-space: nowrap;
+    margin-right: 100px;
+}
+.note-patient{
+    background-color: #E6F6FE;
+    padding-bottom: 20px;
+}
+.details-container-2{
+    padding: 10px 15px;
+}

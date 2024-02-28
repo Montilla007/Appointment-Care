@@ -5,11 +5,8 @@ import "../../../css/DoctorPageLayout.css";
 
 const DoctorPageLayout = ({ userData }) => {
     const [storedUserData, setStoredUserData] = React.useState(null);
-    console.log(userData);
-
     React.useEffect(() => {
         const storedUserData = localStorage.getItem('userData');
-        console.log('Stored User Data:', storedUserData);
         if (storedUserData) {
             setStoredUserData(JSON.parse(storedUserData));
         }
@@ -29,11 +26,10 @@ const DoctorPageLayout = ({ userData }) => {
                         <div className="d-flex"></div>
                         <ul className="sidebar-nav">
                             <li className="sidebar-item">
-                                <NavLink exact={true} end className={({ isActive }) => isActive ? "doctor-link-active" : "sidebar-link"} to="/doctorpage">
+                                <NavLink exact="true" end className={({ isActive }) => isActive ? "doctor-link-active" : "sidebar-link"} to="/doctorpage">
                                     <i className='lni lni-grid-alt'></i>
                                 </NavLink>
                             </li>
-                            {/* Other sidebar items */}
                             <li className="sidebar-item">
                                 <NavLink to="DoctorAcceptReject" className={({ isActive }) => isActive ? "doctor-link-active" : "sidebar-link"}>
                                     <i className="fa-solid fa-list-check"></i>
@@ -46,7 +42,7 @@ const DoctorPageLayout = ({ userData }) => {
                             </li>
                             <li className="sidebar-item">
                                 <NavLink to="DoctorUserProfile" className={({ isActive }) => isActive ? "doctor-link-active" : "sidebar-link"}>
-                                    <i className="fa-solid fa-user"></i>
+                                    <i className="fa-solid fa-gear"></i>
                                 </NavLink>
                             </li>
                             <li className="sidebar-item">

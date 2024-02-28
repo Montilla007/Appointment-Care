@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../css/Navigation.css';
-import logoImage from "../../../public/logo.png"
+import logoImage from "/logo.png"
 
 const Navigation = ({ userData }) => {
     const [storedUserData, setStoredUserData] = useState(null);
 
     useEffect(() => {
         const storedUserData = localStorage.getItem('userData');
-        console.log('Stored User Data:', storedUserData); // Check if stored user data is retrieved
         if (storedUserData) {
             setStoredUserData(JSON.parse(storedUserData));
         }
@@ -28,6 +27,8 @@ const Navigation = ({ userData }) => {
                             <li className="nav-item"><NavLink to="/Service" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Service</NavLink></li>
                             <li className="nav-item"><NavLink to="/TopDoctors" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Find Doctor</NavLink></li>
                             <li className="nav-item"><NavLink to="/Contact" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>Contact Us</NavLink></li>
+                            {storedUserData && <li className="nav-item"><NavLink to="PatienAppointment" className={({ isActive }) => isActive ? "nav-active" : "nav-new"}>My Bookings</NavLink></li>}
+
                         </ul>
                     </div>
 

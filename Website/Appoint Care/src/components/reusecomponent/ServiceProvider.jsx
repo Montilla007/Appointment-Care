@@ -3,7 +3,7 @@ import '../../css/ServiceProvider.css'
 
 const ServiceProvider = () => {
   return (
-    <section className='provider'>
+    <section className='provider mb-5'>
       <div className="container">
         <div className='text-center service-provide'>
           <h2>Services we Provide</h2>

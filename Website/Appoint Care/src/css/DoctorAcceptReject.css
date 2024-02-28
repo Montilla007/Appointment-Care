@@ -1,0 +1,54 @@
+.schedule-container{
+    display: flex;
+    align-items: start;
+    padding: 20px;
+    background-color: #FAFAFA;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.span-bold{
+    font-weight: 600;
+}
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.other-details-2{
+    margin-right: 200px;
+}
+.svg-component-2 i{
+    margin-right: 10px;
+}
+.svg-component-2 span{
+    margin-right: 10px;
+}
+.btn-viewprofile-2{
+    color: #007E85;
+    border: 1px solid #007E85;  
+    border-radius: 5px;
+    padding: 5px 30px;
+    font-weight: 400;
+    background-color: transparent;
+}
+.btn-viewprofile-2:hover{
+    border-color: #007E85;
+    background-color: #007E85;
+    color: white;
+}
+.btn-appointment-2{
+    color: white;
+    background-color: #007E85;
+    border: 1px solid #007E85;  
+    border-radius: 5px;
+    padding: 5px 30px;
+    font-weight: 400;
+}
+.btn-appointment-2:hover{
+    background-color: #6EAB36;
+    border-color: #6EAB36;
+}
+.no-patients{
+    font-size: 50px;
+}

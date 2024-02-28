@@ -87,3 +87,9 @@
 .margin-left-doctorName{
     margin-left: 20px;
 }
+.tabs-active{
+    color: #007E85;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 5px 15px;
+}

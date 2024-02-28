@@ -46,19 +46,18 @@ const DoctorProfile = () => {
                                 <span className='profile-consult'>Online Consultation</span></div>}
                         </div>
                         <div className='mt-2'>
-                            <button className='btn-appointment px-3 py-2'>Request an Appointment</button>
-                            <button className='mx-2 doctor-phonenumber'>{doctorInfo.number}</button>                        </div>
+                            <NavLink to={`/Appointment/${doctorInfo._id}`} ><button className='btn-appointment px-3 py-2'>Request an Appointment</button></NavLink>
+                            <button className='mx-2 doctor-phonenumber'>{doctorInfo.number}</button>
+                        </div>
                     </div>
                 </div>
                 <div>
                     <div className="container body-section">
                         <div className="row tab-section">
                             <div className="col-2">
-                                <NavLink exact="true" to="" end className="tabs"><i className="fa-regular fa-user"></i> Overview</NavLink>
+                                <NavLink exact="true" end className={({ isActive }) => isActive ? "tabs-active" : "tabs"}><i className="fa-regular fa-user"></i> Overview</NavLink>
                             </div>
                             <div className="col-2">
-                                <NavLink to="" end className="tabs"><i className="fa-regular fa-user"></i> Overview</NavLink>
-
                                 <button className="tabs"><i className="fa-regular fa-calendar-days"></i> Schedule</button>
                             </div>
                             <div className="col-2">

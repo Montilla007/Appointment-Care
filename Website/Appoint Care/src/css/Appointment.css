@@ -1,0 +1,89 @@
+.section-appointment{
+    margin: 50px 100px;
+}
+.appointments{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #E6E6E6;
+    border-radius: 15px;
+    padding: 20px;
+    width: 500px;
+    margin: auto;
+}
+.appointments h2{
+    padding-bottom: 20px;
+}
+.appointments label{
+    font-weight: 500;
+    font-size: 18px;
+    padding: 5px;
+}
+.appointments input{
+    width: 400px;
+    padding-top: 10px;
+}
+.appointments button{
+    width: 100%;
+    background-color: #007E85;
+    border-radius: 5px;
+    border: 0;
+    height: 52px;
+    color: white;
+}
+.appointment-f2f{
+    display: flex;
+    align-items: center;
+}
+.appointment-f2f label{
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.appointment-f2f input{
+    align-items: center;
+}
+.appointment-doctor-info img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+
+}
+.appointment-doctor-info h2{
+    font-weight: 700;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+.speciality-2{
+    color: #007E85;
+    font-size: 22px;
+}
+.book-an-appointment{
+    margin-bottom: 100px;
+}
+.md-doctor-2{
+    font-weight: 500;
+    color: #596e8a;
+}
+.book-an-appointment h2{
+    font-weight: 700;
+}
+.book-an-appointment label{
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px;
+    color: #28334a;
+}
+.doctor-name-2 {
+    font-size: 28px;
+}
+.book-an-appointment input{
+    width: 100%;
+    height: 50px;
+}
+.book-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

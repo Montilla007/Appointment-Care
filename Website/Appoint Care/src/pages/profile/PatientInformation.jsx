@@ -34,11 +34,17 @@ const PatientInformation = ({ userData }) => {
         localStorage.setItem('userData', JSON.stringify(response.data.user));
         console.log("Successfully updated")
         window.location.reload();
+        setEmailExists(false);
       } else {
         console.error('User data is invalid.');
       }
     } catch (error) {
-      console.error('Error updating user data:', error);
+      if (error.response && error.response.status === 500) {
+        setEmailExists(true);
+      } else {
+        console.error('Error updating user data:', error);
+
+      }
     }
   };
 
@@ -53,6 +59,7 @@ const PatientInformation = ({ userData }) => {
       reader.readAsDataURL(file);
     }
   };
+  const [emailExists, setEmailExists] = useState(false);
 
   return (
     <div className="col-7 mx-5 mt-3 mb-5">
@@ -70,35 +77,43 @@ const PatientInformation = ({ userData }) => {
       </div>
       <div className="row info-input">
         <div className="col-12 px-0">
-          <label htmlFor="patientinfo-firstName">First Name</label>
+          <label htmlFor="Fname">First Name</label>
           <br />
-          <input type="text" className='form-control' placeholder={userData ? userData.Fname : "First Name"} value={editedUserData ? editedUserData.Fname || "" : ""} id='Fname' onChange={handleInputChange} />
+          <input type="text" className='form-control' placeholder={userData ? userData.Fname : "First Name"}
+            value={editedUserData ? editedUserData.Fname || "" : ""} id='Fname' onChange={handleInputChange} />
         </div>
         <div className="col-12 px-0">
-          <label htmlFor="patientinfo-lastName">Last Name</label>
+          <label htmlFor="Lname">Last Name</label>
           <br />
-          <input type="text" className='form-control' placeholder={userData ? userData.Lname : "Last Name"} value={editedUserData ? editedUserData.Lname || "" : ""} id='Lname' onChange={handleInputChange} />
+          <input type="text" className='form-control' placeholder={userData ? userData.Lname : "Last Name"}
+            value={editedUserData ? editedUserData.Lname || "" : ""} id='Lname' onChange={handleInputChange} />
         </div>
         <div className="col-12 px-0">
-          <label htmlFor="patientinfo-age">Age</label>
+          <label htmlFor="age">Age</label>
           <br />
-          <input type="number" className='form-control' placeholder={userData ? userData.age : "Age"} value={editedUserData ? editedUserData.age || "" : ""} id='age' onChange={handleInputChange} />
+
+          <input type="number" className='form-control' placeholder={userData ? userData.age : "Age"}
+            value={editedUserData ? editedUserData.age || "" : ""} id='age' onChange={handleInputChange} />
         </div>
         <div className="col-12 px-0">
-          <label htmlFor="patientinfo-gender">Gender</label>
+          <label htmlFor="gender">Gender</label>
           <br />
-          <input type="text" className='form-control' placeholder={userData ? userData.gender : "Gender"} value={editedUserData ? editedUserData.gender || "" : ""} id='gender' onChange={handleInputChange} />
+          <input type="text" className='form-control' placeholder={userData ? userData.gender : "Gender"}
+            value={editedUserData ? editedUserData.gender || "" : ""} id='gender' onChange={handleInputChange} />
         </div>
         <div className="col-12 px-0">
-          <label htmlFor="patientinfo-number">Number</label>
+          <label htmlFor="number">Number</label>
           <br />
-          <input type="text" className='form-control' placeholder={userData ? userData.number : "Phone number"} value={editedUserData ? editedUserData.number || "" : ""} id='number' onChange={handleInputChange} />
+          <input type="text" className='form-control' placeholder={userData ? userData.number : "Phone number"}
+            value={editedUserData ? editedUserData.number || "" : ""} id='number' onChange={handleInputChange} />
         </div>
         <div className="col-12 px-0">
-          <label htmlFor="patientinfo-email">Email</label>
+          <label htmlFor="email">Email</label>
           <br />
-          <input type="email" className='form-control' placeholder={userData ? userData.email : "Email"} value={editedUserData ? editedUserData.email || "" : ""} id='email' onChange={handleInputChange} />
+          <input type="email" className='form-control' placeholder={userData ? userData.email : "Email"}
+            value={editedUserData ? editedUserData.email || "" : ""} id='email' onChange={handleInputChange} />
         </div>
+        {emailExists && <div className="alert alert-danger alert-email" role="alert">Email already exists. Please use another email.</div>}
 
         <div className="col-7">
         </div>
