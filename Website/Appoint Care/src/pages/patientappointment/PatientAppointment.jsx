@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "../../css/PatientAppointment.css"
 import axios from 'axios';
+import VectorThree from "../../../public/consultation-vector-3.png"
 
 const PatientAppointment = ({ userData }) => {
     const [loading, setLoading] = useState(true);
@@ -42,7 +43,7 @@ const PatientAppointment = ({ userData }) => {
             <section className='patient-booking'>
                 <div className="container">
                     <div className='text-center'>
-                        <img src="/public/consultation-vector-3.png" alt="patient-vector" />
+                        <img src={VectorThree} alt="patient-vector" />
                         <h2>No Bookings</h2>
                         <p className='lead'>You have no bookings at the moment.</p>
                     </div>

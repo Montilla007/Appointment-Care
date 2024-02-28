@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../../css/DoctorPatients.css'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios';
+import VectorTwo from "../../../public/consultation-vector-2.png"
 
 
 const DoctorPatients = ({ userData }) => {
@@ -43,7 +44,7 @@ const DoctorPatients = ({ userData }) => {
       <section className='patient-booking'>
         <div className="container">
           <div className='text-center'>
-            <img src="/public/consultation-vector-2.png" alt="patient-vector" />
+            <img src={VectorTwo} alt="patient-vector" />
             <h2>No Bookings</h2>
             <p className='lead'>You have no Patients at the moment. Check Patient Appointment List</p>
           </div>
@@ -57,7 +58,7 @@ const DoctorPatients = ({ userData }) => {
       <section className='patient-booking'>
         <div className="container">
           <div className='text-center'>
-            <img src="/public/consultation-vector-2.png" alt="patient-vector" />
+            <img src={VectorTwo} alt="patient-vector" />
             <h2 className='mt-5'>No Accepted Bookings</h2>
             <p className='lead'>You have no accepted Patients at the moment.</p>
           </div>
